@@ -35,17 +35,21 @@
 <style scoped>
 
 .footer {
-  position: fixed;
-  bottom: 0;
-  background-color: #d9d9d9;
-  width: 100vw;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  justify-content: center;
-  align-items: center;
-  padding: 3rem 2rem;
+   display: grid;
+   grid-template-columns: 2fr 1fr;
+   justify-content: center;
+   align-items: center;
+   padding: 3rem 2rem;
+   background-color: var(--cor-cinza-2);
+   width: 100vw;
 }
 
+.footer-description {
+   padding: 1rem;
+   display: grid;
+   row-gap: 1rem;
+   color: var(--cor-branco);
+}
 .footer-icons {
    display: grid;
    grid-template-columns: auto auto auto auto;
@@ -55,16 +59,7 @@
 
 .footer-icons a svg {
    width: 2rem;
-}
-
-.footer-description {
-   padding: 1rem;
-   display: grid;
-   row-gap: 1rem;
-}
-
-.description {
-   
+   color: var(--cor-branco);
 }
 
 </style>
