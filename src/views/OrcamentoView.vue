@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import CampoSelecao from '../components/CampoSelecao.vue'
 
 const acessorios = ref([
     {
@@ -7,32 +8,35 @@ const acessorios = ref([
         nome: 'Cachorreira', 
         preco: 300, 
         descricao: '', 
-        img: ''
+        img: '',
+        alt: ''
     },
     {
         id: 2, 
         nome: 'Portão social', 
         preco: 500, 
         descricao: '',
-        img: ''
+        img: '',
+        alt: ''
     },
     {
         id: 3, 
         nome: 'Tampa ponta de lança', 
         preco: 30, 
         descricao: '',
-        img: ''
+        img: '',
+        alt: ''
     }
 ]);
 
-const palitos = ref([
+const tubos = ref([
     {   
         id: 1, 
         nome: 'Redondo', 
         preco: 60, 
         descricao: 'ghfffyu',
         img: '../img/tubo-redondo-branco.png',
-        alt: ''
+        alt: 'jhxdjhdjdjhn'
     },
     {  
         id: 2, 
@@ -40,7 +44,7 @@ const palitos = ref([
         preco: 49, 
         descricao: 'tgyfytgt',
         img: '../img/tubo-quadrado-branco.png',
-        alt: ''
+        alt: 'hdfshsfhjfjjff'
     }
 ]);
 
@@ -59,46 +63,30 @@ const cores = ref([
     }
 ]);
 
-const palitoSelecionado = ref({
+const tuboSelecionado = ref({
     id: "", 
     nome: "", 
     preco: 0, 
     descricao: "", 
     img: "",
-    alt: '',
-})
+    alt: ''
+});
 
 </script>
 
 <template>
-    <form>
+    <form class="form">
         <fieldset>
-            <legend>Informações</legend>
+            <h1 class="form-titulo">Orçamento</h1>
 
             <div class="altura-comprimento">
-                <input type="text" name="altura" id="altura" v-model="altura">
-                <input type="text" name="comprimento" id="comprimento" v-model="comprimento">
+                <input type="text" name="altura" id="altura" placeholder="Altura" v-model="altura">
+                <input type="text" name="comprimento" id="comprimento" placeholder="Comprimento" v-model="comprimento">
             </div>
 
-            <article>
-                <h5>Tipo do palito:</h5>
-                <section>
-                    <div>
-                        <select name="palitoS" id="palitoS" v-model="palitoSelecionado">
-                            <option v-for="palito in palitos" :key="palito.id" :value="palito">{{ palito.nome }}</option>
-                        </select>
-                        <div v-if="palitoSelecionado.descricao">
-                            <p>{{ palitoSelecionado.descricao }}</p>
-                            <p>Valor: {{ palitoSelecionado.preco }}</p>
-                        </div> 
-                    </div>
-                   
-                    <div v-if="palitoSelecionado.img">
-                        <img src="{{ palitoSelecionado.img }}" alt="{{ palitoSelecionado.alt }}">
-                    </div>
-                </section>
-            </article>
+            <CampoSelecao :tubos="tubos" :tuboSelecionados="tuboSelecionados" :cores="cores" :acessorios="acessorios"/>
 
+            <!--
             <article>
                 <h5>Tipo do palito:</h5>
                 <section>
@@ -136,12 +124,36 @@ const palitoSelecionado = ref({
                     </div>
                 </section>
             </article>
+            -->
         </fieldset>
     </form>
     
 </template>
 
 <style scoped>
+
+    .form {
+        display: grid;
+        justify-content: center;
+    }
+
+    .form fieldset {
+        width: 90vw;
+        padding: 3rem 0;
+    }
+
+    .altura-comprimento {
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 1rem;
+    }    
+
+    .altura-comprimento input {
+        margin-top: 3rem;
+        padding: .6rem 1rem;
+        border: 1px solid var(--cor-preto);
+        border-radius: 10px;
+    }
 
     
 
