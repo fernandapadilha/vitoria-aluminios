@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue';
-import CampoSelecao from '../components/CampoSelecao.vue'
+import SelecaoTubo from '../components/SelecaoTubo.vue';
+import SelecaoCor from '../components/SelecaoCor.vue';
+
 
 const acessorios = ref([
     {
@@ -35,7 +37,7 @@ const tubos = ref([
         nome: 'Redondo', 
         preco: 60, 
         descricao: 'ghfffyu',
-        img: '../img/tubo-redondo-branco.png',
+        img: 'tubo-redondo-branco.png',
         alt: 'jhxdjhdjdjhn'
     },
     {  
@@ -43,7 +45,7 @@ const tubos = ref([
         nome: 'Quadrado', 
         preco: 49, 
         descricao: 'tgyfytgt',
-        img: '../img/tubo-quadrado-branco.png',
+        img: 'tubo-quadrado-branco.png',
         alt: 'hdfshsfhjfjjff'
     }
 ]);
@@ -52,25 +54,18 @@ const cores = ref([
     {
         id: 1,
         nome: 'Branco',
-        img: '',
-        alt: ''
+        descricao: 'descrição branco',
+        img: 'tubo-quadrado-branco.png',
+        alt: 'gsaghgdsdsa'
     },
     {
         id: 2,
         nome: 'Preto',
-        img: '',
-        alt: ''
+        descricao: 'descrição preto',
+        img: 'tubo-quadrado-branco.png',
+        alt: 'jhfdkdshfkhjsdf'
     }
 ]);
-
-const tuboSelecionado = ref({
-    id: "", 
-    nome: "", 
-    preco: 0, 
-    descricao: "", 
-    img: "",
-    alt: ''
-});
 
 </script>
 
@@ -84,28 +79,11 @@ const tuboSelecionado = ref({
                 <input type="text" name="comprimento" id="comprimento" placeholder="Comprimento" v-model="comprimento">
             </div>
 
-            <CampoSelecao :tubos="tubos" :tuboSelecionados="tuboSelecionados" :cores="cores" :acessorios="acessorios"/>
+            <SelecaoTubo :tubos="tubos" /> 
+            
+            <SelecaoCor :cores="cores" />
 
             <!--
-            <article>
-                <h5>Tipo do palito:</h5>
-                <section>
-                    <div>
-                        <select name="cores" id="cores" v-model="cores">
-                            
-                        </select>
-                        <div>
-                            <p>Informações adicionais</p>
-                            <p>Valor: uhfdslk</p>
-                        </div> 
-                    </div>
-                   
-                    <div>
-                        <img src="" alt="">
-                    </div>
-                </section>
-            </article>
-
             <article>
                 <h5>Tipo do palito:</h5>
                 <section>

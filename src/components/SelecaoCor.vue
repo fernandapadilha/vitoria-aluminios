@@ -1,25 +1,37 @@
 <script setup>
-defineProps(["tubos", "tuboSelecionado", "cores", "acessorios"]);
+import { computed, ref } from 'vue';
+defineProps({
+    cores: Array
+});
 
+const corSelecionada = ref({
+    id: '',
+    nome: '',
+    descricao: '',
+    img: '',
+    alt: ''
+});
+
+const imageUrl = computed(
+    () => new URL(`../assets/img/${corSelecionada.value.img}`, import.meta.url).href
+);
 </script>
 
 <template>
-
     <article class="campo-informacao">
-        <h5>Tipo do tubo:</h5>
+        <h5>Tipo de cor:</h5>
         <section class="campo-selecao">
             <div>
-                <select name="tubos" id="tubos" v-model="tuboSelecionado">
-                    <option v-for="tubo in tubos" :key="tubo.id" :value="tubo">{{ tubo.nome }}</option>
+                <select name="cores" id="cores" v-model="corSelecionada">
+                    <option v-for="cor in cores" :key="cor.id" :value="cor">{{ cor.nome }}</option>
                 </select>
-                <div class="descricao-produto" v-if="tuboSelecionado.descricao">
-                    <p>{{ tuboSelecionado.descricao }}</p>
-                    <p>Valor: {{ tuboSelecionado.preco }}</p>
+                <div class="descricao-produto" v-if="corSelecionada.descricao">
+                    <p>{{ corSelecionada.descricao }}</p>
                 </div> 
             </div>
                     
-            <div v-if="tuboSelecionado.img">
-                <img class="img-selecao" :src="tuboSelecionado.img" :alt="tuboSelecionado.alt">
+            <div v-if="corSelecionada.img">
+                <img class="img-selecao" :src="imageUrl" :alt="corSelecionada.alt">
             </div>
         </section>
     </article>
