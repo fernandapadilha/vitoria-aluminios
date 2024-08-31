@@ -40,6 +40,7 @@
    justify-content: center;
    align-items: center;
    padding: 3rem 2rem;
+   margin-top: 5rem;
    background-color: var(--cor-cinza-2);
    width: 100vw;
 }
