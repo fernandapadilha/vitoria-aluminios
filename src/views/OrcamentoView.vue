@@ -2,34 +2,7 @@
 import { ref } from 'vue';
 import SelecaoTubo from '../components/SelecaoTubo.vue';
 import SelecaoCor from '../components/SelecaoCor.vue';
-
-
-const acessorios = ref([
-    {
-        id: 1, 
-        nome: 'Cachorreira', 
-        preco: 300, 
-        descricao: '', 
-        img: '',
-        alt: ''
-    },
-    {
-        id: 2, 
-        nome: 'Portão social', 
-        preco: 500, 
-        descricao: '',
-        img: '',
-        alt: ''
-    },
-    {
-        id: 3, 
-        nome: 'Tampa ponta de lança', 
-        preco: 30, 
-        descricao: '',
-        img: '',
-        alt: ''
-    }
-]);
+import SelecaoAcessorio from '../components/SelecaoAcessorio.vue';
 
 const tubos = ref([
     {   
@@ -67,6 +40,33 @@ const cores = ref([
     }
 ]);
 
+const acessorios = ref([
+    {
+        id: 1, 
+        nome: 'Cachorreira', 
+        preco: 300, 
+        descricao: 'kjsdhdsfhdd', 
+        img: 'tubo-quadrado-branco.png',
+        alt: 'dsfdsffddfs'
+    },
+    {
+        id: 2, 
+        nome: 'Portão social', 
+        preco: 500, 
+        descricao: 'dsvsdfvsdfdsf',
+        img: 'tubo-quadrado-branco.png',
+        alt: 'dsffddfs'
+    },
+    {
+        id: 3, 
+        nome: 'Tampa ponta de lança', 
+        preco: 30, 
+        descricao: 'esfsdfsdffds',
+        img: 'tubo-quadrado-branco.png',
+        alt: 'sdsfsdfds'
+    }
+]);
+
 </script>
 
 <template>
@@ -83,26 +83,8 @@ const cores = ref([
             
             <SelecaoCor :cores="cores" />
 
-            <!--
-            <article>
-                <h5>Tipo do palito:</h5>
-                <section>
-                    <div>
-                        <select name="acessorios" id="acessorios" v-model="acessorios">
-                            
-                        </select>
-                        <div>
-                            <p>Informações adicionais</p>
-                            <p>Valor: uhfdslk</p>
-                        </div> 
-                    </div>
-                   
-                    <div>
-                        <img src="" alt="">
-                    </div>
-                </section>
-            </article>
-            -->
+            <SelecaoAcessorio :acessorios="acessorios" />
+
         </fieldset>
     </form>
     
@@ -132,7 +114,5 @@ const cores = ref([
         border: 1px solid var(--cor-preto);
         border-radius: 10px;
     }
-
-    
 
 </style>
