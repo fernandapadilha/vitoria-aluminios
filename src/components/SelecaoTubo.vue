@@ -35,7 +35,7 @@ const imageUrl = computed(
             </div>
                     
             <div v-if="tuboSelecionado.img">
-                <img class="img-selecao" :src="imageUrl" :alt="tuboSelecionado.alt">
+                <img :src="imageUrl" :alt="tuboSelecionado.alt">
             </div>
         </section>
     </article>
@@ -52,6 +52,7 @@ const imageUrl = computed(
         display: grid;
         grid-template-columns: 1fr 1fr;
         height: 10rem;
+        color: var(--cor-preto);
     }
 
     .campo-selecao > div {
@@ -71,9 +72,10 @@ const imageUrl = computed(
         padding: 1rem;
     }
 
-    .img-selecao {
+    .campo-selecao > div > img {
         width: 100%;
         height: 100%;
+        object-fit: cover;
     }
 
 </style>

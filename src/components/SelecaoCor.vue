@@ -19,7 +19,7 @@ const imageUrl = computed(
 
 <template>
     <article class="campo-informacao">
-        <h5>Tipo de cor:</h5>
+        <h5>Cor:</h5>
         <section class="campo-selecao">
             <div>
                 <select name="cores" id="cores" v-model="corSelecionada">
@@ -31,7 +31,7 @@ const imageUrl = computed(
             </div>
                     
             <div v-if="corSelecionada.img">
-                <img class="img-selecao" :src="imageUrl" :alt="corSelecionada.alt">
+                <img :src="imageUrl" :alt="corSelecionada.alt">
             </div>
         </section>
     </article>
@@ -43,14 +43,18 @@ const imageUrl = computed(
     .campo-informacao {
         margin-top: 3rem;
     }
+
     .campo-selecao {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        height: 10rem;
+        color: var(--cor-preto);
     }
 
     .campo-selecao > div {
         background-color: var(--cor-cinza-1);
         border: 1px solid var(--cor-preto);
+        max-height: 10rem;  
     }
 
     .campo-selecao div select {
@@ -62,6 +66,12 @@ const imageUrl = computed(
 
     .descricao-produto {
         padding: 1rem;
+    }
+
+    .campo-selecao > div > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
 </style>
