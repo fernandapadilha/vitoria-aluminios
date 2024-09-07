@@ -22,7 +22,7 @@ const imageUrl = computed(
         <h5>Cor:</h5>
         <section class="campo-selecao">
             <div>
-                <select name="cores" id="cores" v-model="corSelecionada">
+                <select class="form-select" name="cores" id="cores" v-model="corSelecionada">
                     <option v-for="cor in cores" :key="cor.id" :value="cor">{{ cor.nome }}</option>
                 </select>
                 <div class="descricao-produto" v-if="corSelecionada.descricao">
@@ -47,14 +47,20 @@ const imageUrl = computed(
     .campo-selecao {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        column-gap: 1rem;
         height: 10rem;
         color: var(--cor-preto);
     }
 
     .campo-selecao > div {
         background-color: var(--cor-cinza-1);
-        border: 1px solid var(--cor-preto);
+        border: 1px solid var(--cor-branco);
+        box-shadow: 2px 2px 3px 3px var(--cor-branco);
         max-height: 10rem;  
+    }
+
+    .campo-selecao > div, .campo-selecao div select, .campo-selecao div img {
+        border-radius: 10px;
     }
 
     .campo-selecao div select {
