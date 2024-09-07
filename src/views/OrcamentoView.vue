@@ -75,8 +75,8 @@ const acessorios = ref([
             <h1 class="form-titulo">Orçamento</h1>
 
             <div class="altura-comprimento">
-                <input type="text" name="altura" id="altura" placeholder="Altura" v-model="altura">
-                <input type="text" name="comprimento" id="comprimento" placeholder="Comprimento" v-model="comprimento">
+                <input class="form-control" type="text" name="altura" id="altura" placeholder="Altura" v-model="altura">
+                <input class="form-control" type="text" name="comprimento" id="comprimento" placeholder="Comprimento" v-model="comprimento">
             </div>
 
             <SelecaoTubo :tubos="tubos" /> 
@@ -111,8 +111,12 @@ const acessorios = ref([
     .altura-comprimento input {
         margin-top: 3rem;
         padding: .6rem 1rem;
-        border: 1px solid var(--cor-preto);
-        border-radius: 10px;
+    }
+
+    @media(max-width: 630px) {
+        .altura-comprimento {
+            grid-template-columns: auto;
+        }
     }
 
 </style>
