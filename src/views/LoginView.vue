@@ -5,7 +5,7 @@
 <template>
 
     <main class="box-login-page">
-        <img src="../img/reading-glasses.svg" alt="Senhorinha lendo um livro">
+        <img src="../assets/img/icone-portao.png" alt="Ícone do portão">
         <section class="login-section">
             <h2>Campo de Login</h2>
             <div>
