@@ -9,17 +9,17 @@ const tubos = ref([
         id: 1, 
         nome: 'Redondo', 
         preco: 60, 
-        descricao: 'ghfffyu',
+        descricao: 'Tubo para portão formato 3x4 redondo',
         img: 'tubo-redondo-branco.png',
-        alt: 'jhxdjhdjdjhn'
+        alt: 'Tubo redondo branco'
     },
     {  
         id: 2, 
         nome: 'Quadrado', 
         preco: 49, 
-        descricao: 'tgyfytgt',
+        descricao: 'Tubo para portão formato 12x25 quadrado',
         img: 'tubo-quadrado-branco.png',
-        alt: 'hdfshsfhjfjjff'
+        alt: 'Tubo quadrado branco'
     }
 ]);
 
@@ -27,16 +27,16 @@ const cores = ref([
     {
         id: 1,
         nome: 'Branco',
-        descricao: 'descrição branco',
+        descricao: 'Tubo para portão de cor branca',
         img: 'tubo-quadrado-branco.png',
-        alt: 'gsaghgdsdsa'
+        alt: 'Tubo quadrado branco'
     },
     {
         id: 2,
         nome: 'Preto',
-        descricao: 'descrição preto',
-        img: 'tubo-quadrado-branco.png',
-        alt: 'jhfdkdshfkhjsdf'
+        descricao: 'Tubo para portão de cor preta',
+        img: 'tubo-quadrado-preto.png',
+        alt: 'Tubo quadrado preto'
     }
 ]);
 
@@ -45,25 +45,25 @@ const acessorios = ref([
         id: 1, 
         nome: 'Cachorreira', 
         preco: 300, 
-        descricao: 'kjsdhdsfhdd', 
-        img: 'tubo-quadrado-branco.png',
-        alt: 'dsfdsffddfs'
+        descricao: 'Dispositivo localizado na parte inferior do portão responsável por impedir a passagem de animais pelos vãos entre os tubos do portão', 
+        img: 'portao-com-cachorreira.png',
+        alt: 'Portão com cachorreira'
     },
     {
         id: 2, 
         nome: 'Portão social', 
         preco: 500, 
-        descricao: 'dsvsdfvsdfdsf',
-        img: 'tubo-quadrado-branco.png',
-        alt: 'dsffddfs'
+        descricao: 'Porta embutida localizada na porção inicial do portão para a passagem de pessoas',
+        img: 'portao-com-portao-social.png',
+        alt: 'Portão com portão social'
     },
     {
         id: 3, 
         nome: 'Tampa ponta de lança', 
         preco: 30, 
-        descricao: 'esfsdfsdffds',
-        img: 'tubo-quadrado-branco.png',
-        alt: 'sdsfsdfds'
+        descricao: 'Ponta em formato do lança localizada no segmento superior de cada tubo do portão',
+        img: 'ponta-de-lanca.png',
+        alt: 'Tampa ponta de lança'
     }
 ]);
 
@@ -84,6 +84,10 @@ const acessorios = ref([
             <SelecaoCor :cores="cores" />
 
             <SelecaoAcessorio :acessorios="acessorios" />
+
+            <div class="div-botao">
+                <button type="button" class="btn btn-lg btn-block botao">Confirmar orçamento</button>
+            </div>
 
         </fieldset>
     </form>
@@ -111,6 +115,17 @@ const acessorios = ref([
     .altura-comprimento input {
         margin-top: 3rem;
         padding: .6rem 1rem;
+    }
+
+    .div-botao {
+        display: grid;
+        margin-top: 3rem;
+    }
+
+    .botao {
+        background-color: var(--cor-cinza-2);
+        color: var(--cor-branco);
+        box-shadow: 2px 2px 3px 3px var(--cor-branco);
     }
 
     @media(max-width: 630px) {
