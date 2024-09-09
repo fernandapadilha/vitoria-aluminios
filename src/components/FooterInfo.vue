@@ -4,7 +4,10 @@
    <footer class="footer">
       <div class="footer-description">
          <h1>VITÓRIA ALUMÍNIOS</h1>
-         <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam illum quaerat animi ipsam culpa. Vitae numquam at harum vero nobis, ipsum accusantium ex nemo voluptate sunt dolorem consequatur, aliquam voluptas.</p>
+         <p class="description">
+            A Vitória Alumínios é uma empresa especializada na confecção de portões de alumínio
+            personalizados.
+         </p>
       </div>
       <div class="footer-icons">
          <a href="">
@@ -50,6 +53,7 @@
    row-gap: 1rem;
    color: var(--cor-branco);
 }
+
 .footer-icons {
    display: grid;
    grid-template-columns: auto auto auto auto;
@@ -60,6 +64,22 @@
 .footer-icons a svg {
    width: 2rem;
    color: var(--cor-branco);
+}
+
+.footer-icons a svg:hover {
+   color: var(--cor-principal);
+}
+
+@media(max-width: 630px) {
+   .footer {
+      grid-template-columns: 1fr;
+   }
+}
+
+@media(max-width: 400px) {
+   .footer-icons a svg {
+      width: 1.5rem;
+   }
 }
 
 </style>
