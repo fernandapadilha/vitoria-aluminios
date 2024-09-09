@@ -17,6 +17,11 @@ const router = createRouter({
       path: '/orcamento',
       name: 'orcamento',
       component: () => import('../views/OrcamentoView.vue')
+    },
+    {
+      path: '/cadastro',
+      name: 'cadastro',
+      component: () => import('../views/CadastroView.vue')
     }
   ]
 })
