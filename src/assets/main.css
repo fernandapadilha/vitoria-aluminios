@@ -10,9 +10,11 @@
 }
 
 :root {
-    --cor-cinza-1: #809FA6;
+    --cor-cinza-1: #82968C;
     --cor-cinza-2: #5A6E73;
-    --cor-cinza-3: #2C3E40;
-    --cor-principal: #4BA684;
+    --cor-cinza-3: #2F3E46;
+    --cor-principal: #A61B0F;
     --cor-branco: #D4D9D2;
+    --cor-preto: #0D0D0D;
+    --cor-transparente: rgba(0, 0, 0, 0);
 }
