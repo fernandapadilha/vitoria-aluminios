@@ -31,18 +31,55 @@
     iure numquam?</div>
 </section>
 
-<section class="sponsorship">
+<!-- <section class="sponsorship">
   <div> 
     <h1>Patrocinadores e Lojas</h1> 
-      <div class="carousel-item">
-        <img src="@/assets/img/guapore.png" alt="">
-        <div class="carousel-caption d-none d-md-block">
-        <h5>...</h5>
-        <p>...</p>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-50" src="@/assets/img/guapore.png" alt="First slide">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>...</h5>
+            <p>...</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img class="d-block w-50" src="@/assets/img/casa_aluminios.png" alt="Second slide">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>...</h5>
+            <p>...</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img class="d-block w-50" src="@/assets/img/guapore.png" alt="Third slide">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>...</h5>
+            <p>...</p>
+          </div>
+        </div>
       </div>
+
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
   </div>
-</section>
+</section> -->
 
 </template>
 
@@ -80,20 +117,20 @@
   .objetivos {
     display: grid;
     grid-template-columns: auto auto auto;
-    column-gap: 3rem;
+    padding: 1rem;
+    column-gap: 1.5rem;
    
   }
 
   .objetivos div {
-    padding: 4rem 3rem;
+    padding: 2rem 1rem;
     font-size: larger;
     background-color: white;
     border: solid;
     box-shadow: 10px 20px grey;
     border-radius: 1rem;
-    margin: 3rem;
   }
-
+/* 
   .sponsorship {
     display: grid;
     justify-content: center;
@@ -103,8 +140,6 @@
     background-color: grey;
     cursor: pointer;
     transition: 1s;
-    
-    margin: 3rem;
   }
 
   .sponsorship div{
@@ -120,7 +155,7 @@
     border: 3px solid blue;
     background-color: black;
     transition: 1s;
-  }
+  } */
 
   
 </style>
