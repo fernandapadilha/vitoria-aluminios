@@ -5,7 +5,7 @@
 <template>
   <section class="carousel-section">
     <div class="slide">
-      <img src="@/img/Portao1.png" alt="">
+      <img src="@/assets/img/Portao1.png" alt="">
     </div>
 
   
@@ -34,9 +34,13 @@
 <section class="sponsorship">
   <div> 
     <h1>Patrocinadores e Lojas</h1> 
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio reiciendis porro vel architecto perferendis 
-    dicta soluta magnam pariatur explicabo aut, voluptate vero tenetur exercitationem quisquam totam ex expedita eos. 
-    Doloribus?</p>
+      <div class="carousel-item">
+        <img src="@/assets/img/guapore.png" alt="">
+        <div class="carousel-caption d-none d-md-block">
+        <h5>...</h5>
+        <p>...</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -55,6 +59,7 @@
     display: grid;
     justify-items: center;
     align-items: center;
+    padding: 2rem;
   }
 
   .slide img {
