@@ -3,25 +3,52 @@
 <template>
   <div class="grid-models">
     <div class="models-products">
-      <img src="@/img/portaodezesete.jpg" alt="imagem1" />
+      <img class="foto-portao" src="@/assets/img/portaodezesete.jpg" alt="portaobranco" />
       <p>Perfil Estrutural do Portão branco de Alumínio</p>
-      <p class="p">R$1500,00</p>
+      <img class="avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
+      <p class="p">R$2500,00</p>
     </div>
     <div class="models-products">
-      <img src="@/img/portaoquinze.jpg" alt="" />
+      <img class="foto-portao" src="@/assets/img/portaoquinze.jpg" alt="portaobranco" />
       <p>Perfil Estrutural do Portão branco de Alumínio</p>
+      <img class="avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
       <p class="p">R$1550,00</p>
     </div>
     <div class="models-products">
-      <img src="@/img/portaodezoito.jpg" alt="" />
+      <img class="foto-portao" src="@/assets/img/portaodezoito.jpg" alt="portaobranco" />
       <P>Perfil Estrutural do Portão branco de Alumínio</P>
-      <P class="p">R$1000,00</P>
+      <img class="avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
+      <P class="p">R$1200,00</P>
     </div>
     <div class="models-products">
-      <img src="@/img/portaodois.jpg" alt="" />
+      <img class="foto-portao" src="@/assets/img/portaodois.jpg" alt="portaopreto" />
       <p>Perfil Estrutural do Portão preto de Alumínio</p>
-      <p class="p">R$1000,00</p>
-      <avaliacao>ícone</avaliacao>
+      <img class="avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
+      <p class="p">R$1200,00</p>
+    </div>
+    <div class="models-products">
+      <img class="foto-portao" src="@/assets/img/portaocinco.jpg" alt="portaopreto" />
+      <p>Perfil Estrutural do Portão preto de Alumínio</p>
+      <img class="avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
+      <p class="p">R$1500,00</p>
+    </div>
+    <div class="models-products">
+      <img class="foto-portao" src="@/assets/img/portaoum.jpg" alt="portaobranco" />
+      <p>Perfil Estrutural do Portão branco de Alumínio</p>
+      <img class="avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
+      <p class="p">R$2500,00</p>
+    </div>
+    <div class="models-products">
+      <img class="foto-portao" src="@/assets/img/portaoquatro.jpg" alt="portaobranco" />
+      <p>Perfil Estrutural do Portão branco de Alumínio</p>
+      <img class="avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
+      <p class="p">R$1800,00</p>
+    </div>
+    <div class="models-products">
+      <img class="foto-portao" src="@/assets/img/portaodezeseis.jpg" alt="portaobranco" />
+      <p>Perfil Estrutural do Portão branco de Alumínio</p>
+      <img class="avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
+      <p class="p">R$2000,00</p>
     </div>
   </div>
 
@@ -29,11 +56,18 @@
 </template>
 
 <style scoped>
-img {
-  height: 350px;
-  width: 370px;
+.foto-portao {
+  height: 20rem;
+  width: 23rem;
   border-radius: 10px;
 }
+
+.avaliacao {
+  width: 8rem;
+  max-height: 3rem;
+  object-fit: cover;
+}
+
 .models-products {
   gap: 2px;
   text-align: center;
