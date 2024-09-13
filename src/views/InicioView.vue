@@ -96,7 +96,7 @@
     display: grid;
     justify-items: center;
     align-items: center;
-    padding: 2rem;
+
   }
 
   .slide img {
@@ -109,17 +109,12 @@
     align-content: center;
   }
 
-  .description {
-    font-size: x-large;
-    
-  }
 
   .objetivos {
     display: grid;
     grid-template-columns: auto auto auto;
     padding: 1rem;
-    column-gap: 1.5rem;
-   
+    gap: 1.5rem;
   }
 
   .objetivos div {
@@ -127,8 +122,29 @@
     font-size: larger;
     background-color: white;
     border: solid;
-    box-shadow: 10px 20px grey;
+    box-shadow: 5px 10px grey;
     border-radius: 1rem;
+  }
+
+  @media (max-width: 700px) {
+    .objetivos {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .carousel-section {
+      grid-template-columns: 1fr;
+      margin-top: 0;
+    }
+
+    .slide img {
+      width: 100vw;
+    }
+
+    .quem-somos-nos{
+      padding: 0 1rem;
+    }
   }
 /* 
   .sponsorship {
@@ -157,5 +173,6 @@
     transition: 1s;
   } */
 
+  
   
 </style>
