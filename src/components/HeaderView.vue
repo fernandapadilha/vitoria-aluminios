@@ -71,4 +71,16 @@
     color: var(--cor-branco);
     text-decoration: none;
   }
+
+  @media (max-width: 410px) {
+    .cadastro p {
+      display: none;
+    }
+  }
+
+  @media (max-width: 350px) {
+    .lista-menu li a {
+      font-size: .9rem;
+    }
+  }
 </style>
