@@ -10,25 +10,39 @@
 
   
     <div class="quem-somos-nos">
-      <h1 class="title">Quem somos nós?</h1>
-      <p class="description" > Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa eligendi 
-        temporibus beatae, nisi illum accusantium, nihil tempore at quis, similique dolorem dolores. Ad, incidunt? 
-        Quos fugit iste nulla ab! </p> 
+      <h1>QUEM SOMOS NÓS?</h1>
+      <p> Desde 2011 somos uma empresa independente de confecção de portões, voltada para serviços de 
+      pequeno porte, como: casas, sobrados, condomínios, etc. A empresa Vitória Alumínios exerce grande inflência na região norte de Santa Catarina,
+      em cidades como: Balneário Barra do Sul, Joinville, São Francisco do Sul, Araquari e Balneário Piçarras. </p> 
+      <p>Esta empresa foi fundada por Benício Padilha, em união com sua família, que é de grande importância para o sucesso laboral.</p>
     </div>
   </section>
   
   <section class="objetivos">
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci officiis sequi pariatur 
-    totam recusandae? Veritatis nihil placeat perspiciatis suscipit laboriosam consequatur ipsam, corrupti, magnam quod, 
-    quibusdam nostrum a rerum officia?</div>
+    <div>
+      <h2>VISÃO</h2>
+      <p>A empresa Vitória Alumínios visa consolidar-se em seu ramo na região norte de SC.</p>
+    </div>
 
-    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, ullam blanditiis! Sed delectus 
-    saepe tenetur deserunt repellat sint? Voluptate fugiat autem nostrum iusto provident corporis nemo necessitatibus 
-    soluta delectus ipsam.</div>
+    <div>
+      <h2>MISSÃO</h2>
+      <p>Nossa missão esta relacionada em garantir a segurança dos cidadãos, bem como proporcionar
+      uma experiência estética favorável ao estilo dos clientes.
+      </p>
+    </div>
 
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat enim, neque ut maxime sit 
-    quibusdam autem eos! Cumque, sit, unde commodi molestiae enim reiciendis quam, voluptates doloribus accusamus 
-    iure numquam?</div>
+    <div>
+      <h2>VALORES</h2>
+    <ul>
+      <li>Integridade;</li>
+      <li>Responsabilidade social;</li>
+      <li>Respeito; </li>
+      <li>Trabalho em equipe;</li>
+      <li>Inovação;</li>  
+      <li>Foco no cliente;</li>
+      <li>Família.</li> 
+    </ul>
+    </div>
 </section>
 
 <!-- <section class="sponsorship">
@@ -105,14 +119,23 @@
   }
 
   .quem-somos-nos {
-    display: grid;
-    align-content: center;
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
 
+    & h1 {
+      font-size: 2.7rem;
+    }
+    
+    & p {
+      font-size: 1.5rem;
+    }
+  }
 
   .objetivos {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
     padding: 1rem;
     gap: 1.5rem;
   }
@@ -124,6 +147,19 @@
     border: solid;
     box-shadow: 5px 10px grey;
     border-radius: 1rem;
+
+    & h2 {
+      font-family: var(--fonte-titulo);
+    }
+
+    & p {
+      font-size: 1.5rem;
+    }
+
+    & ul li {
+      list-style-type: disc;
+      font-size: 1.5rem;
+    } 
   }
 
   @media (max-width: 700px) {
@@ -132,7 +168,7 @@
     }
   }
   
-  @media (max-width: 600px) {
+  @media (max-width: 960px) {
     .carousel-section {
       grid-template-columns: 1fr;
       margin-top: 0;
