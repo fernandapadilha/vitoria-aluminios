@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
 
 * {
   margin: 0;
@@ -6,7 +8,6 @@
   list-style-type: none;
   text-decoration: none;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
 }
 
 :root {
@@ -17,4 +18,6 @@
     --cor-branco: #D4D9D2;
     --cor-preto: #0D0D0D;
     --cor-transparente: rgba(0, 0, 0, 0);
+    --fonte-titulo: "Roboto Slab", serif;
+    --fonte-corpo: "Inter", sans-serif;
 }
