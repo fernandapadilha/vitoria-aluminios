@@ -54,7 +54,7 @@ const acessorios = ref([
         nome: 'Portão social', 
         preco: 500, 
         descricao: 'Porta embutida localizada na porção inicial do portão para a passagem de pessoas',
-        img: 'portao-com-portao-social.png',
+        img: 'portaocinco.jpg',
         alt: 'Portão com portão social'
     },
     {

@@ -1,15 +1,11 @@
 <script setup>
 
-import { computed, ref } from 'vue';
-defineProps({
-    acessorios: Array,
-});
+import { ref } from 'vue';
+defineProps(['acessorios']);
 
 const acessoriosSelecionados = ref([]);
 
-const imageUrl = computed(
-    () => new URL(`../assets/img/${acessoriosSelecionados.value.img}`, import.meta.url).href
-);
+const imageUrl = (img) => new URL(`../assets/img/${img}`, import.meta.url).href
 
 function formatarPreco(preco) {
     return `R$ ${preco.toFixed(2).replace('.', ',')}`
@@ -38,7 +34,7 @@ function formatarPreco(preco) {
                     <div class="campo-acessorio">
                         <p>{{ acessorio.descricao }}</p>
                         <p>Valor: {{ formatarPreco(acessorio.preco) }}</p>
-                        <img :src="imageUrl" :alt="acessorio.alt">
+                        <img :src="imageUrl(acessorio.img)" :alt="acessorio.alt">
                     </div>
                 </section>
             </template>
@@ -67,11 +63,13 @@ function formatarPreco(preco) {
     .campo-selecao {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        align-items: start;
         gap: 1rem;
     }
 
     .campo-selecao > section {
         display: grid;
+        align-items: center;
         background-color: var(--cor-cinza-1);
         color: var(--cor-preto);
         border: 1px solid var(--cor-branco);
@@ -104,7 +102,7 @@ function formatarPreco(preco) {
 
     .campo-acessorio img {
         width: 100%;
-        height: 100%;
+        height: 50%;
         object-fit: cover;
     }
 
