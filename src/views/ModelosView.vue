@@ -28,14 +28,14 @@
     </section>
 
     <section class="models-products">
-      <img class="foto-portao" src="@/assets/img/portaodois.jpg" alt="portaopreto" />
+      <img class="foto-portao" src="@/assets/img/cachorreira.png" alt="portaopreto" />
       <p>Perfil Estrutural do Portão preto de Alumínio</p>
       <img class="avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
       <p class="p">R$1200,00</p>
     </section>
 
     <section class="models-products">
-      <img class="foto-portao" src="@/assets/img/portaocinco.jpg" alt="portaopreto" />
+      <img class="foto-portao" src="@/assets/img/portao-social.png" alt="portaopreto" />
       <p>Perfil Estrutural do Portão preto de Alumínio</p>
       <img class="avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
       <p class="p">R$1500,00</p>
@@ -56,7 +56,7 @@
     </section>
 
     <section class="models-products">
-      <img class="foto-portao" src="@/assets/img/portaodezeseis.jpg" alt="portaobranco" />
+      <img class="foto-portao" src="@/assets/img/portao-com-portao-social.png" alt="portaobranco" />
       <p>Perfil Estrutural do Portão branco de Alumínio</p>
       <img class="avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
       <p class="p">R$2000,00</p>
@@ -77,8 +77,9 @@
 
 .grid-models {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  padding: 5rem;
+  /* grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); */
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 1.5rem;
   gap: 2rem;
 }
 
@@ -88,9 +89,8 @@
   padding: 1rem;
   text-align: center;
   border: 1px solid rgb(221, 221, 221);
-  border-radius: 4%;
+  border-radius: 10px;
   font-family: "Barlow Condensed", sans-serif;
-  font-weight: 500;
   font-style: italic;
 }
 
@@ -119,6 +119,18 @@
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 800;
   font-style: italic;
+}
+
+@media (max-width: 950px) {
+  .grid-models {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .grid-models {
+    grid-template-columns: 1fr;
+  }
 }
 
 </style>

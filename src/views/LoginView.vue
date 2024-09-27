@@ -36,6 +36,10 @@
         align-items: center;
     }
 
+    .box-login-page img {
+        width: 100%;
+    }
+
     .login-section {
         display: grid;
         justify-content: center;
