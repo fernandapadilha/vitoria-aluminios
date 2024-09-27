@@ -46,7 +46,7 @@ const acessorios = ref([
         nome: 'Cachorreira', 
         preco: 300, 
         descricao: 'Dispositivo localizado na parte inferior do portão responsável por impedir a passagem de animais pelos vãos entre os tubos do portão', 
-        img: 'portao-com-cachorreira.png',
+        img: 'cachorreira.png',
         alt: 'Portão com cachorreira'
     },
     {
@@ -54,7 +54,7 @@ const acessorios = ref([
         nome: 'Portão social', 
         preco: 500, 
         descricao: 'Porta embutida localizada na porção inicial do portão para a passagem de pessoas',
-        img: 'portaocinco.jpg',
+        img: 'portao-social.png',
         alt: 'Portão com portão social'
     },
     {
@@ -62,7 +62,7 @@ const acessorios = ref([
         nome: 'Tampa ponta de lança', 
         preco: 30, 
         descricao: 'Ponta em formato do lança localizada no segmento superior de cada tubo do portão',
-        img: 'ponta-de-lanca.png',
+        img: 'tampa-lanca.png',
         alt: 'Tampa ponta de lança'
     }
 ]);

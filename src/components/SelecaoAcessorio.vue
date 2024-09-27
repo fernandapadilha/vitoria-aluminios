@@ -56,10 +56,6 @@ function formatarPreco(preco) {
         padding: 0;
     }
 
-    .campo-informacao {
-        margin-top: 3rem;
-    }
-
     .campo-selecao {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -74,6 +70,7 @@ function formatarPreco(preco) {
         color: var(--cor-preto);
         border: 1px solid var(--cor-branco);
         box-shadow: 2px 2px 3px 3px var(--cor-branco);
+        min-height: 20rem;
     }
 
     .campo-selecao > section, .campo-acessorio img {

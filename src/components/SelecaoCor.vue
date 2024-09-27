@@ -41,7 +41,7 @@ const imageUrl = computed(
 <style scoped>
 
     .campo-informacao {
-        margin-top: 3rem;
+        height: 90vh;
     }
 
     .campo-selecao {
@@ -78,6 +78,13 @@ const imageUrl = computed(
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+    @media (max-width: 500px) {
+        .campo-selecao {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
     }
 
 </style>
