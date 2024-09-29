@@ -4,9 +4,9 @@
 
 <template>
 
-    <main class="box-login-page">
+    <main class="login">
         <img src="../assets/img/icone-portao.png" alt="Ícone do portão">
-        <section class="login-section">
+        <section class="login-secao">
             <h2>Campo de Login</h2>
             <div>
                 <label for="user-name">Nome de usuário:</label>
@@ -28,7 +28,7 @@
 
 <style scoped>
 
-    .box-login-page {
+    .login {
         display: grid;
         grid-template-columns: 1fr 1fr;
         padding: 5rem 2rem;
@@ -36,11 +36,11 @@
         align-items: center;
     }
 
-    .box-login-page img {
+    .login img {
         width: 100%;
     }
 
-    .login-section {
+    .login-secao {
         display: grid;
         justify-content: center;
         align-content: center;
@@ -51,17 +51,17 @@
         padding: 3rem;
     }
 
-    .login-section h2, .login-section div p {
+    .login-secao h2, .login-secao div p {
         text-align: center;
     }
 
-    .login-section div {
+    .login-secao div {
         display: grid;
         grid-template-rows: auto auto;
         row-gap: .5rem;
     }
 
-    .login-section div input {
+    .login-secao div input {
         padding: .5rem;
         border: 1px solid var(--cor-branco);
         background-color: var(--cor-transparente);
@@ -70,12 +70,12 @@
         width: 20vw;
     }
 
-    .login-section div input:focus {
+    .login-secao div input:focus {
         outline: 0;
         border: 2px solid;
     }
 
-    .login-section button {
+    .login-secao button {
         padding: .5rem;
         border: none;
         border-radius: 6px;
@@ -84,55 +84,55 @@
         color: var(--cor-preto);
     }
 
-    .login-section button:hover {
+    .login-secao button:hover {
         background-color: var(--cor-cinza-2);
         color: var(--cor-branco);
     }
     
-    .login-section button:active {
+    .login-secao button:active {
         background-color: var(--cor-preto);
         color: var(--cor-branco);
     }
 
-    .login-section div p a {
+    .login-secao div p a {
         color: var(--cor-branco);
         text-decoration: none;
     }
 
-    .login-section div p a:hover {
+    .login-secao div p a:hover {
         text-decoration: underline;
     }
 
     @media (max-width: 750px) {
-        .box-login-page {
+        .login {
             grid-template-columns: auto;
         }
 
-        .box-login-page img {
+        .login img {
             display: none;
         }
 
-        .login-section {
+        .login-secao {
             background-color: var(--cor-transparente);
             color: var(--cor-cinza-2);
             padding: 0;
         }
 
-        .login-section div input {
+        .login-secao div input {
             border-color: var(--cor-cinza-2);
             width: auto;
         }
 
-        .login-section div input:focus {
+        .login-secao div input:focus {
             border-color: var(--cor-cinza-2);
         }
 
-        .login-section button {
+        .login-secao button {
             background-color: var(--cor-cinza-3);
             color: var(--cor-branco);
         }
 
-        .login-section div p a {
+        .login-secao div p a {
             color: var(--cor-cinza-3);
         }
     }
