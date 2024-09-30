@@ -50,6 +50,7 @@ function formatarPreco(preco) {
 
     .campo-informacao {
         margin-top: 3rem;
+        height: 90vh
     }
 
     .campo-selecao {
@@ -86,6 +87,13 @@ function formatarPreco(preco) {
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+    @media (max-width: 500px) {
+        .campo-selecao {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
     }
 
 </style>

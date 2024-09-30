@@ -44,9 +44,9 @@ const acessorios = ref([
     {
         id: 1, 
         nome: 'Cachorreira', 
-        preco: 300, 
+        preco: 650, 
         descricao: 'Dispositivo localizado na parte inferior do portão responsável por impedir a passagem de animais pelos vãos entre os tubos do portão', 
-        img: 'portao-com-cachorreira.png',
+        img: 'cachorreira.png',
         alt: 'Portão com cachorreira'
     },
     {
@@ -54,7 +54,7 @@ const acessorios = ref([
         nome: 'Portão social', 
         preco: 500, 
         descricao: 'Porta embutida localizada na porção inicial do portão para a passagem de pessoas',
-        img: 'portao-com-portao-social.png',
+        img: 'portao-social.png',
         alt: 'Portão com portão social'
     },
     {
@@ -62,7 +62,7 @@ const acessorios = ref([
         nome: 'Tampa ponta de lança', 
         preco: 30, 
         descricao: 'Ponta em formato do lança localizada no segmento superior de cada tubo do portão',
-        img: 'ponta-de-lanca.png',
+        img: 'tampa-lanca.png',
         alt: 'Tampa ponta de lança'
     }
 ]);
@@ -70,11 +70,11 @@ const acessorios = ref([
 </script>
 
 <template>
-    <form class="form">
+    <form class="formulario">
         <fieldset>
-            <h1 class="form-titulo">Orçamento</h1>
+            <h1>Orçamento</h1>
 
-            <div class="altura-comprimento">
+            <div class="formulario-medidas">
                 <input class="form-control" type="text" name="altura" id="altura" placeholder="Altura" v-model="altura">
                 <input class="form-control" type="text" name="comprimento" id="comprimento" placeholder="Comprimento" v-model="comprimento">
             </div>
@@ -85,8 +85,8 @@ const acessorios = ref([
 
             <SelecaoAcessorio :acessorios="acessorios" />
 
-            <div class="div-botao">
-                <button type="button" class="btn btn-lg btn-block botao">Confirmar orçamento</button>
+            <div class="formulario-botao">
+                <button type="button" class="btn btn-lg btn-block">Confirmar orçamento</button>
             </div>
 
         </fieldset>
@@ -96,40 +96,40 @@ const acessorios = ref([
 
 <style scoped>
 
-    .form {
+    .formulario {
         display: grid;
         justify-content: center;
     }
 
-    .form fieldset {
+    .formulario fieldset {
         width: 90vw;
         padding: 3rem 0;
     }
 
-    .altura-comprimento {
+    .formulario-medidas {
         display: grid;
         grid-template-columns: auto auto;
         column-gap: 1rem;
     }    
 
-    .altura-comprimento input {
+    .formulario-medidas input {
         margin-top: 3rem;
         padding: .6rem 1rem;
     }
 
-    .div-botao {
+    .formulario-botao {
         display: grid;
         margin-top: 3rem;
     }
 
-    .botao {
+    .formulario-botao button {
         background-color: var(--cor-cinza-2);
         color: var(--cor-branco);
         box-shadow: 2px 2px 3px 3px var(--cor-branco);
     }
 
     @media(max-width: 630px) {
-        .altura-comprimento {
+        .formulario-medidas {
             grid-template-columns: auto;
         }
     }

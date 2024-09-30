@@ -3,8 +3,8 @@
 </script>
 
 <template>
-  <section class="carousel-section">
-    <div class="slide">
+  <section class="carrossel">
+    <div class="carrossel-imagem">
       <img src="@/assets/img/Portao1.png" alt="">
     </div>
 
@@ -33,15 +33,15 @@
 
     <div>
       <h2>VALORES</h2>
-    <ul>
-      <li>Integridade;</li>
-      <li>Responsabilidade social;</li>
-      <li>Respeito; </li>
-      <li>Trabalho em equipe;</li>
-      <li>Inovação;</li>  
-      <li>Foco no cliente;</li>
-      <li>Família.</li> 
-    </ul>
+      <ul>
+        <li>Integridade;</li>
+        <li>Responsabilidade social;</li>
+        <li>Respeito; </li>
+        <li>Trabalho em equipe;</li>
+        <li>Inovação;</li>  
+        <li>Foco no cliente;</li>
+        <li>Família.</li> 
+      </ul>
     </div>
 </section>
 
@@ -99,21 +99,21 @@
 
 <style scoped>
 
-  .carousel-section {
+  .carrossel {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 7rem;
     min-height: 10rem;
   }
 
-  .slide {
+  .carrossel-imagem {
     display: grid;
     justify-items: center;
     align-items: center;
 
   }
 
-  .slide img {
+  .carrossel-imagem img {
     width: 90%;
     height: 90%;
   }
@@ -169,12 +169,12 @@
   }
   
   @media (max-width: 960px) {
-    .carousel-section {
+    .carrossel {
       grid-template-columns: 1fr;
       margin-top: 0;
     }
 
-    .slide img {
+    .carrossel-imagem img {
       width: 100vw;
     }
 

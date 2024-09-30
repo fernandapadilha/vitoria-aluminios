@@ -2,28 +2,28 @@
 import { ref, reactive } from 'vue';
 
 const usuario = reactive({
-    socialName: '',
+    nomeSocial: '',
     cpf: '',
     rg: '',
-    dateOfBirth: '',
+    dataNascimento: '',
     telefone: '',
     email: '',
-    userName: '',
-    password: ''
+    nomeUsuario: '',
+    senha: ''
 });
 
-const confirmPassword = ref('');
+const confirmarSenha = ref('');
 
 </script>
 
 <template>
-    <main class="family-member-form">
+    <main class="cadastro">
         <h1>Campo de Cadastro</h1>
 
-        <form class="form">
+        <form class="formulario">
             <div>
-                <label for="social-name">Nome social:</label>
-                <input type="text" name="social-name" id="social-name" v-model="usuario.socialName">
+                <label for="nome-social">Nome social:</label>
+                <input type="text" name="nome-social" id="nome-social" v-model="usuario.nomeSocial">
             </div>
             <div>
                 <label for="cpf">CPF:</label>
@@ -34,8 +34,8 @@ const confirmPassword = ref('');
                 <input type="text" name="rg" id="rg" v-model="usuario.rg">
             </div>
             <div>
-                <label for="dateOfBirth">Data de nascimento:</label>
-                <input type="date" name="dateOfBirth" id="dateOfBirth" v-model="usuario.dateOfBirth">
+                <label for="data-nascimento">Data de nascimento:</label>
+                <input type="date" name="data-nascimento" id="data-nascimento" v-model="usuario.dataNascimento">
             </div>
             <div>
                 <label for="telefone">Telefone:</label>
@@ -46,26 +46,26 @@ const confirmPassword = ref('');
                 <input type="email" name="email" id="email" v-model="usuario.email">
             </div>
             <div>
-                <label for="user-name">Nome de usuário:</label>
-                <input type="text" name="user-name" id="user-name" v-model="usuario.userName">
+                <label for="nome-usuario">Nome de usuário:</label>
+                <input type="text" name="nome-usuario" id="nome-usuario" v-model="usuario.nomeUsuario">
             </div>
             <div>
-                <label for="password">Senha:</label>
-                <input type="password" name="password" id="password" v-model="usuario.password">
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" id="senha" v-model="usuario.senha">
             </div>
             <div>
-                <label for="confirmPassword">Confirmar senha:</label>
-                <input type="password" name="confirmPassword" id="confirmPassword" v-model="confirmPassword">
+                <label for="confirmar-senha">Confirmar senha:</label>
+                <input type="password" name="confirmar-senha" id="confirmar-senha" v-model="confirmarSenha">
             </div>
         </form>
 
-        <button type="button" class="botao">ENVIAR</button>
+        <button type="button" class="cadastro-botao">ENVIAR</button>
     </main>
 </template>
 
 <style scoped>
 
-    .family-member-form {
+    .cadastro {
         display: grid;
         row-gap: 2rem;
         justify-content: center;
@@ -73,7 +73,7 @@ const confirmPassword = ref('');
         padding: 5rem 1rem;
     }
 
-    .form div {
+    .formulario div {
         display: grid;
         grid-template-columns: 3fr 7fr;
         align-items: center;
@@ -81,7 +81,7 @@ const confirmPassword = ref('');
         padding: 1rem;
     }
 
-    .form div input {
+    .formulario div input {
         padding: .5rem;
         background-color: var(--cor-transparente);
         border: 1px solid var(--cor-preto);
@@ -89,7 +89,7 @@ const confirmPassword = ref('');
         font-size: 1rem;
     }
 
-    .botao {
+    .cadastro-botao {
         background-color: var(--cor-cinza-1);
         border: none;
         border-radius: 6px;
@@ -97,26 +97,26 @@ const confirmPassword = ref('');
         font-size: 1rem
     }
 
-    .botao:hover {
+    .cadastro-botao:hover {
         color: var(--cor-branco);
         background-color: var(--cor-principal);
     }
 
-    .botao:active {
+    .cadastro-botao:active {
         color: var(--cor-branco);
         background-color: var(--cor-preto);
     }
 
     @media (max-width: 385px) {
-        .family-member-form {
+        .cadastro {
             padding: 5rem 0;
         }
 
-        .family-member-form h1 {
+        .cadastro h1 {
             font-size: 1.5rem;
         }
 
-        .form div input {
+        .formulario div input {
             font-size: .5rem;
         }
     }
