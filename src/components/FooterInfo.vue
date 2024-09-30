@@ -1,15 +1,16 @@
 <script setup></script>
 
 <template>
-   <footer class="footer">
-      <div class="footer-description">
+   <footer class="rodape">
+      <div class="rodape-descricao">
          <h1>VITÓRIA ALUMÍNIOS</h1>
-         <p class="description">
+         <p>
             A Vitória Alumínios é uma empresa especializada na confecção de portões de alumínio
             personalizados.
          </p>
       </div>
-      <div class="footer-icons">
+
+      <div class="rodape-icones">
          <a href="https://www.facebook.com/vitoria.aluminio.5">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
@@ -32,7 +33,7 @@
 
 <style scoped>
 
-.footer {
+.rodape {
    display: grid;
    grid-template-columns: 2fr 1fr;
    justify-content: center;
@@ -42,37 +43,37 @@
    background-color: var(--cor-cinza-2);
 }
 
-.footer-description {
+.rodape-descricao {
    padding: 1rem;
    display: grid;
    row-gap: 1rem;
    color: var(--cor-branco);
 }
 
-.footer-icons {
+.rodape-icones {
    display: grid;
    grid-template-columns: auto auto auto;
    justify-content: center;
    column-gap: 2.5rem;
 }
 
-.footer-icons a svg {
+.rodape-icones a svg {
    width: 2rem;
    color: var(--cor-branco);
 }
 
-.footer-icons a svg:hover {
+.rodape-icones a svg:hover {
    color: var(--cor-principal);
 }
 
 @media(max-width: 630px) {
-   .footer {
+   .rodape {
       grid-template-columns: 1fr;
    }
 }
 
 @media(max-width: 400px) {
-   .footer-icons a svg {
+   .rodape-icones a svg {
       width: 1.5rem;
    }
 }
