@@ -3,46 +3,47 @@
 </script>
 
 <template>
-  <section class="carrossel">
-    <div class="carrossel-imagem">
-      <img src="@/assets/img/Portao1.png" alt="">
-    </div>
+  <section class="secao-apresentacao">
+    <section class="bloco-apresentacao">
+      <div class="apresentecao-imagem">
+        <img src="@/assets/img/Portao1.png" alt="">
+      </div>
 
-  
-    <div class="quem-somos-nos">
-      <h1>QUEM SOMOS NÓS?</h1>
-      <p> Desde 2011 somos uma empresa independente de confecção de portões, voltada para serviços de 
-      pequeno porte, como: casas, sobrados, condomínios, etc. A empresa Vitória Alumínios exerce grande inflência na região norte de Santa Catarina,
-      em cidades como: Balneário Barra do Sul, Joinville, São Francisco do Sul, Araquari e Balneário Piçarras. </p> 
-      <p>Esta empresa foi fundada por Benício Padilha, em união com sua família, que é de grande importância para o sucesso laboral.</p>
-    </div>
+    
+      <div class="apresentacao-texto">
+        <h1>A principal no setor em Barra do Sul e região</h1>
+        <p> Encontre uma variedade de portões e faça o seu orçamento</p>
+      </div>
+    </section>
   </section>
-  
-  <section class="objetivos">
-    <div>
-      <h2>VISÃO</h2>
-      <p>A empresa Vitória Alumínios visa consolidar-se em seu ramo na região norte de SC.</p>
-    </div>
 
-    <div>
-      <h2>MISSÃO</h2>
-      <p>Nossa missão esta relacionada em garantir a segurança dos cidadãos, bem como proporcionar
-      uma experiência estética favorável ao estilo dos clientes.
-      </p>
-    </div>
+  <section class="secao-objetivos">
+    <section class="bloco-objetivos">
+      <div>
+        <h2>VISÃO</h2>
+        <p>A empresa Vitória Alumínios visa consolidar-se em seu ramo na região norte de SC.</p>
+      </div>
 
-    <div>
-      <h2>VALORES</h2>
-      <ul>
-        <li>Integridade;</li>
-        <li>Responsabilidade social;</li>
-        <li>Respeito; </li>
-        <li>Trabalho em equipe;</li>
-        <li>Inovação;</li>  
-        <li>Foco no cliente;</li>
-        <li>Família.</li> 
-      </ul>
-    </div>
+      <div>
+        <h2>MISSÃO</h2>
+        <p>Nossa missão esta relacionada em garantir a segurança dos cidadãos, bem como proporcionar
+        uma experiência estética favorável ao estilo dos clientes.
+        </p>
+      </div>
+
+      <div>
+        <h2>VALORES</h2>
+        <ul>
+          <li>Integridade;</li>
+          <li>Responsabilidade social;</li>
+          <li>Respeito; </li>
+          <li>Trabalho em equipe;</li>
+          <li>Inovação;</li>  
+          <li>Foco no cliente;</li>
+          <li>Família.</li> 
+        </ul>
+      </div>
+  </section>
 </section>
 
 <!-- <section class="sponsorship">
@@ -99,71 +100,82 @@
 
 <style scoped>
 
-  .carrossel {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 7rem;
-    min-height: 10rem;
-  }
-
-  .carrossel-imagem {
+  .secao-apresentacao {
     display: grid;
     justify-items: center;
-    align-items: center;
-
+    padding: 3rem 0;
   }
 
-  .carrossel-imagem img {
+  .bloco-apresentacao {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border: 1px solid var(--cor-branco);
+    box-shadow: 2px 2px 3px 3px var(--cor-branco-secao);
+    border-radius: 15px;
     width: 90%;
-    height: 90%;
   }
 
-  .quem-somos-nos {
+  .apresentecao-imagem > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px 0 0 15px;
+  }
+
+  .apresentacao-texto {
     display: flex;
+    row-gap: .5rem;
     flex-direction: column;
     justify-content: center;
-    padding: 1rem;
+    font-family: var(--fonte-corpo);
+    padding: 0 2rem;
 
     & h1 {
-      font-size: 2.7rem;
+      font-size: 3rem;
+      font-weight: 600;
     }
     
     & p {
       font-size: 1.5rem;
+      color: var(--cor-fonte-branco-complementar);
     }
   }
 
-  .objetivos {
+  .secao-objetivos {
+    display: grid;
+    justify-items: center;
+    background-color: var(--cor-branco-secao);
+  }
+
+  .bloco-objetivos {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
     padding: 1rem;
     gap: 1.5rem;
   }
 
-  .objetivos div {
-    padding: 2rem 1rem;
-    font-size: larger;
-    background-color: white;
-    border: solid;
-    box-shadow: 5px 10px grey;
+  .bloco-objetivos div {
+    background-color: var(--cor-branco);
     border-radius: 1rem;
 
     & h2 {
       font-family: var(--fonte-titulo);
+      text-align: center;
     }
 
     & p {
-      font-size: 1.5rem;
+      font-size: 1rem;
+      padding: 1rem;
     }
 
     & ul li {
       list-style-type: disc;
-      font-size: 1.5rem;
+      font-size: 1rem;
     } 
   }
 
-  @media (max-width: 700px) {
-    .objetivos {
+  /* @media (max-width: 700px) {
+    .bloco-objetivos {
       grid-template-columns: 1fr;
     }
   }
@@ -181,7 +193,7 @@
     .quem-somos-nos{
       padding: 0 1rem;
     }
-  }
+  } */
 /* 
   .sponsorship {
     display: grid;
