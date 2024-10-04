@@ -16,6 +16,7 @@
     --cor-cinza-3: #2F3E46;
     --cor-principal: #A61B0F;
     --cor-branco: #D4D9D2;
+    --cor-white: var(--cor-white);
     --cor-preto: #0D0D0D;
     --cor-transparente: rgba(0, 0, 0, 0);
     --fonte-titulo: "Roboto Slab", serif;

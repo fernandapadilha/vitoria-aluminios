@@ -49,8 +49,7 @@ function formatarPreco(preco) {
 <style scoped>
 
     .campo-informacao {
-        margin-top: 3rem;
-        height: 90vh
+        margin: 3rem 0;
     }
 
     .campo-selecao {
@@ -62,8 +61,8 @@ function formatarPreco(preco) {
     }
 
     .campo-selecao > div {
-        background-color: var(--cor-cinza-1);
-        border: 1px solid var(--cor-branco);
+        background-color: var(--cor-white);
+        border: 1px solid var(--cor-white);
         box-shadow: 2px 2px 3px 3px var(--cor-branco);
         max-height: 10rem;
     }
@@ -75,7 +74,7 @@ function formatarPreco(preco) {
     .campo-selecao div select {
         width: 100%;
         padding: .6rem 1rem;
-        background-color: var(--cor-cinza-1);
+        background-color: var(--cor-branco);
         border: none;
     }
 

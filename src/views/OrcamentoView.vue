@@ -74,6 +74,8 @@ const acessorios = ref([
         <fieldset>
             <h1>Orçamento</h1>
 
+            <h5>Informe os dados sobre o portão para que possamos calcular o preço do serviço:</h5>
+
             <div class="formulario-medidas">
                 <input class="form-control" type="text" name="altura" id="altura" placeholder="Altura" v-model="altura">
                 <input class="form-control" type="text" name="comprimento" id="comprimento" placeholder="Comprimento" v-model="comprimento">
@@ -123,7 +125,7 @@ const acessorios = ref([
     }
 
     .formulario-botao button {
-        background-color: var(--cor-cinza-2);
+        background-color: var(--cor-principal);
         color: var(--cor-branco);
         box-shadow: 2px 2px 3px 3px var(--cor-branco);
     }

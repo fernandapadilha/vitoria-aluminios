@@ -41,7 +41,7 @@ const imageUrl = computed(
 <style scoped>
 
     .campo-informacao {
-        height: 90vh;
+        margin: 3rem 0;
     }
 
     .campo-selecao {
@@ -53,8 +53,8 @@ const imageUrl = computed(
     }
 
     .campo-selecao > div {
-        background-color: var(--cor-cinza-1);
-        border: 1px solid var(--cor-branco);
+        background-color: var(--cor-white);
+        border: 1px solid var(--cor-white);
         box-shadow: 2px 2px 3px 3px var(--cor-branco);
         max-height: 10rem;  
     }
@@ -66,7 +66,7 @@ const imageUrl = computed(
     .campo-selecao div select {
         width: 100%;
         padding: .6rem 1rem;
-        background-color: var(--cor-cinza-1);
+        background-color: var(--cor-branco);
         border: none;
     }
 

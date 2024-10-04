@@ -66,7 +66,7 @@ function formatarPreco(preco) {
     .campo-selecao > section {
         display: grid;
         align-items: center;
-        background-color: var(--cor-cinza-1);
+        background-color: var(--cor-white);
         color: var(--cor-preto);
         border: 1px solid var(--cor-branco);
         box-shadow: 2px 2px 3px 3px var(--cor-branco);
