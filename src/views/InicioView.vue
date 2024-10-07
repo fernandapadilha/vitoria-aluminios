@@ -48,7 +48,7 @@
   </section>
 
   <section class="secao-quem-somos">
-    <section class="bloco-secao-quem-somos">
+    <section class="bloco-quem-somos">
       <img src="../assets/img/portaoquinze.jpg" alt="Portão top" />
 
       <div>
@@ -64,6 +64,29 @@
           importância para o sucesso laboral.
         </p>
       </div>
+    </section>
+  </section>
+
+  <section class="secao-avaliacao">
+    <section>
+      <h1>Quem nos contrata recomenda</h1>
+      <section class="bloco-avaliacao">
+        <div>
+          <img src="../assets/img/aspas.svg" alt="Aspas">
+          <p>Fui muito bem atendida, o profissional foi muito educado e fez um trabalho de qualidade. Valeu a pena, orçamento grátis e não é careiro.</p>
+          <p><span>Ana Paula, de Joinville</span></p>
+        </div>
+        <div>
+          <img src="../assets/img/aspas.svg" alt="Aspas">
+          <p>Excelente serviço! O portão que encomendei ficou impecável, com acabamento de alta qualidade e muita atenção aos detalhes.</p>
+          <p><span>José Luís, de Balneário Barra do Sul</span></p>
+        </div>
+        <div>
+          <img src="../assets/img/aspas.svg" alt="Aspas">
+          <p>A equipe foi extremamente profissional, desde o atendimento até a instalação. Recomendo para quem busca um trabalho eficiente e bem-feito.</p>
+          <p><span>Renilda Miranda, de Joinville</span></p>
+        </div>
+      </section>
     </section>
   </section>
 
@@ -122,7 +145,7 @@
 .secao-apresentacao {
   display: grid;
   justify-items: center;
-  padding: 3rem 0;
+  padding: 5rem 0;
 }
 
 .bloco-apresentacao {
@@ -207,7 +230,63 @@
 }
 
 .secao-quem-somos {
-  
+  display: grid;
+  justify-items: center;
+  padding: 5rem 0;
+}
+
+.bloco-quem-somos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80%;
+
+  & img {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow:
+      0 0 8px 1px var(--cor-sombra),
+      4px 4px 8px 1px var(--cor-sombra);
+  }
+
+  & div {
+    padding: 1rem;
+
+    & p {
+      color: var(--cor-fonte-branco-complementar);
+    }
+  }
+}
+
+.secao-avaliacao {
+  display: grid;
+  justify-items: center;
+  padding: 5rem 0;
+}
+
+.secao-avaliacao > section {
+  width: 90%;
+
+  & h1 {
+    text-align: center;
+    padding: 1rem 0;
+  }
+}
+
+.bloco-avaliacao {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.bloco-avaliacao div {
+  padding: 1rem;
+
+  & p {
+    padding: .5rem 0 0 2rem;
+
+    & span {
+      font-weight: bold;
+    }
+  }
 }
 
 /* @media (max-width: 700px) {
