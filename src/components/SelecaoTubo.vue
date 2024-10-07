@@ -32,6 +32,7 @@ function formatarPreco(preco) {
                 <select class="form-select" name="tubos" id="tubos" v-model="tuboSelecionado">
                     <option v-for="tubo in tubos" :key="tubo.id" :value="tubo">{{ tubo.nome }}</option>
                 </select>
+                
                 <div class="descricao-produto" v-if="tuboSelecionado.descricao">
                     <p>{{ tuboSelecionado.descricao }}</p>
                     <p>Valor: {{ formatarPreco(tuboSelecionado.preco) }}</p>
@@ -54,7 +55,7 @@ function formatarPreco(preco) {
 
     .campo-selecao {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 2.5fr 1fr;
         column-gap: 1rem;
         height: 10rem;
         color: var(--cor-preto);

@@ -46,7 +46,7 @@ const imageUrl = computed(
 
     .campo-selecao {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 2.5fr 1fr;
         column-gap: 1rem;
         height: 10rem;
         color: var(--cor-preto);

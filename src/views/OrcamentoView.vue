@@ -35,7 +35,7 @@ const cores = ref([
         id: 2,
         nome: 'Preto',
         descricao: 'Tubo para portão de cor preta',
-        img: 'tubo-quadrado-preto.png',
+        img: 'tubopreto4.png',
         alt: 'Tubo quadrado preto'
     }
 ]);
@@ -45,7 +45,7 @@ const acessorios = ref([
         id: 1, 
         nome: 'Cachorreira', 
         preco: 650, 
-        descricao: 'Dispositivo localizado na parte inferior do portão responsável por impedir a passagem de animais pelos vãos entre os tubos do portão', 
+        descricao: 'Dispositivo localizado na parte inferior do portão que impede a passagem de animais pelos vãos entre os tubos do portão', 
         img: 'cachorreira.png',
         alt: 'Portão com cachorreira'
     },
