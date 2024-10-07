@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
-
 * {
   margin: 0;
   padding: 0;
@@ -11,15 +10,16 @@
 }
 
 :root {
-    --cor-cinza-1: #82968C;
-    --cor-cinza-2: #5A6E73;
-    --cor-cinza-3: #2F3E46;
-    --cor-principal: #A61B0F;
-    --cor-branco: #ffffff;
-    --cor-preto: #000000;
-    --cor-fonte-branco-complementar: #5F634F;
-    --cor-branco-secao: #F8F8F8;
-    --cor-transparente: rgba(0, 0, 0, 0);
-    --fonte-titulo: "Roboto Slab", serif;
-    --fonte-corpo: "Inter", sans-serif;
+  --cor-cinza-1: #82968c;
+  --cor-cinza-2: #5a6e73;
+  --cor-cinza-3: #2f3e46;
+  --cor-principal: #a61b0f;
+  --cor-branco: #ffffff;
+  --cor-preto: #000000;
+  --cor-fonte-branco-complementar: #5f634f;
+  --cor-branco-secao: #f8f8f8;
+  --cor-sombra: #c7c7c7;
+  --cor-transparente: rgba(0, 0, 0, 0);
+  --fonte-titulo: 'Roboto Slab', serif;
+  --fonte-corpo: 'Inter', sans-serif;
 }
