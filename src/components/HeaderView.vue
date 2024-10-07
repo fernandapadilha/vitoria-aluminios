@@ -35,7 +35,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 2rem;
-    background-color: var(--cor-cinza-3);
+    background-color: #A61B0F;
     color: var(--cor-branco);
   }
 
@@ -56,7 +56,7 @@
   }
 
   .principal-menu {
-    background-color: var(--cor-cinza-2);
+    background-color: #D4D9D2;
   }
 
   .principal-menu-lista {
@@ -70,7 +70,7 @@
   }
 
   .principal-menu-lista li a {
-    color: var(--cor-branco);
+    color: black;
     text-decoration: none;
   }
 

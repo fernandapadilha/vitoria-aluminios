@@ -6,7 +6,9 @@ import img3 from "@/assets/img/portaodezoito.jpg"
 import img4 from "@/assets/img/portaonove.jpg"
 import img5 from "@/assets/img/portaoum.jpg"
 import OrcamentoView from "./OrcamentoView.vue"
+
 import router from "@/router"
+
 const produtos = [
   {
     id: 1,
@@ -40,9 +42,9 @@ const produtos = [
   },
 ]
 
-function comprar(id) {
-  alert("você foi redirecionado para orçamentos")
-  router.push(`/OrcamentoView/${{id}}`)
+function comprar() {
+  router.push(`/orcamento`)
+
 }
 
 </script>
@@ -58,7 +60,7 @@ function comprar(id) {
       <p>{{ produto.nome}}</p>
       <img class="avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
       <p class="p">{{produto.preco}}</p>
-      <button @click="comprar(produto.id)" class="button">Comprar</button>
+      <button @click="comprar" class="button">Comprar</button>
     </section>
   </main>
 

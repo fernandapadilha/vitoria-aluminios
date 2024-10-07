@@ -8,6 +8,29 @@
             A Vitória Alumínios é uma empresa especializada na confecção de portões de alumínio
             personalizados.
          </p>
+        
+         <ul>
+            <h5>Institucional</h5>
+            <li> Sobre nós</li>
+            <li> Relações com investidores</li>
+            <li>Trabalhe conosco</li>
+            <li>Para empresas</li>
+            <li>Política de privacidade</li>
+            <li>Termos de uso</li>
+            <li>Compromisso de integridade</li>
+         </ul>
+      </div>
+
+      <div class="information">
+         <ul>
+            <h5>Fale conosco</h5>
+            <li>Email</li>
+            <li>Telefone</li>
+            <li>Perguntas frequentes</li>
+            <li>Para empresas</li>
+            <li>Depoimentos</li>
+            <li>Endereço</li>
+         </ul>
       </div>
 
       <div class="rodape-icones">
@@ -40,7 +63,7 @@
    align-items: center;
    padding: 3rem 2rem;
    margin-top: 5rem;
-   background-color: var(--cor-cinza-2);
+   background-color: #A61B0F ;
 }
 
 .rodape-descricao {
@@ -64,6 +87,14 @@
 
 .rodape-icones a svg:hover {
    color: var(--cor-principal);
+}
+.information{
+   padding: 1rem;
+   display: grid;
+   row-gap: 1rem;
+   margin-top: 5rem;
+   margin-right: 30rem;
+   color: var(--cor-branco);
 }
 
 @media(max-width: 630px) {

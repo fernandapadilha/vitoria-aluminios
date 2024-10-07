@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import SelecaoTubo from '../components/SelecaoTubo.vue';
 import SelecaoCor from '../components/SelecaoCor.vue';
 import SelecaoAcessorio from '../components/SelecaoAcessorio.vue';
+import ModelosView from './ModelosView.vue';
 
 const tubos = ref([
     {   
