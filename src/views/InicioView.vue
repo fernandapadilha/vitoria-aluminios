@@ -67,30 +67,7 @@
     </section>
   </section>
 
-  <section class="secao-avaliacao">
-    <section>
-      <h1>Quem nos contrata recomenda</h1>
-      <section class="bloco-avaliacao">
-        <div>
-          <img src="../assets/img/aspas.svg" alt="Aspas">
-          <p>Fui muito bem atendida, o profissional foi muito educado e fez um trabalho de qualidade. Valeu a pena, orçamento grátis e não é careiro.</p>
-          <p><span>Ana Paula, de Joinville</span></p>
-        </div>
-        <div>
-          <img src="../assets/img/aspas.svg" alt="Aspas">
-          <p>Excelente serviço! O portão que encomendei ficou impecável, com acabamento de alta qualidade e muita atenção aos detalhes.</p>
-          <p><span>José Luís, de Balneário Barra do Sul</span></p>
-        </div>
-        <div>
-          <img src="../assets/img/aspas.svg" alt="Aspas">
-          <p>A equipe foi extremamente profissional, desde o atendimento até a instalação. Recomendo para quem busca um trabalho eficiente e bem-feito.</p>
-          <p><span>Renilda Miranda, de Joinville</span></p>
-        </div>
-      </section>
-    </section>
-  </section>
-
-  <!-- <section class="sponsorship">
+   <section class="sponsorship">
   <div> 
     <h1>Patrocinadores e Lojas</h1> 
 
@@ -138,7 +115,31 @@
       </a>
     </div>
   </div>
-</section> -->
+</section> 
+
+  <section class="secao-avaliacao">
+    <section>
+      <h1>Quem nos contrata recomenda</h1>
+      <section class="bloco-avaliacao">
+        <div>
+          <img src="../assets/img/aspas.svg" alt="Aspas">
+          <p>Fui muito bem atendida, o profissional foi muito educado e fez um trabalho de qualidade. Valeu a pena, orçamento grátis e não é careiro.</p>
+          <p><span>Ana Paula, de Joinville</span></p>
+        </div>
+        <div>
+          <img src="../assets/img/aspas.svg" alt="Aspas">
+          <p>Excelente serviço! O portão que encomendei ficou impecável, com acabamento de alta qualidade e muita atenção aos detalhes.</p>
+          <p><span>José Luís, de Balneário Barra do Sul</span></p>
+        </div>
+        <div>
+          <img src="../assets/img/aspas.svg" alt="Aspas">
+          <p>A equipe foi extremamente profissional, desde o atendimento até a instalação. Recomendo para quem busca um trabalho eficiente e bem-feito.</p>
+          <p><span>Renilda Miranda, de Joinville</span></p>
+        </div>
+      </section>
+    </section>
+  </section>
+
 </template>
 
 <style scoped>
@@ -257,6 +258,16 @@
   }
 }
 
+.sponsorship div h1 {
+  text-align: center;
+
+
+ & div img carousel-item {
+  width: 100%;
+ }
+
+}
+
 .secao-avaliacao {
   display: grid;
   justify-items: center;
@@ -289,7 +300,7 @@
   }
 }
 
-/* @media (max-width: 700px) {
+/*@media (max-width: 700px) {
     .bloco-objetivos {
       grid-template-columns: 1fr;
     }
@@ -334,5 +345,5 @@
     border: 3px solid blue;
     background-color: black;
     transition: 1s;
-  } */
+  }*/
 </style>
