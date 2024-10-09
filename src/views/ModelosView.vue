@@ -61,12 +61,9 @@ function comprar() {
       <button @click="comprar" class="button">Comprar</button>
     </section>
   </main>
-
-
 </template>
 
 <style scoped>
-
 .titulo-principal {
   text-align: center;
   font-family: var(--fonte-titulo);

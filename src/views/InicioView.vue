@@ -1,51 +1,96 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
-  <section class="carrossel">
-    <div class="carrossel-imagem">
-      <img src="@/assets/img/Portao1.png" alt="">
-    </div>
+  <section class="secao-apresentacao">
+    <section class="bloco-apresentacao">
+      <div class="apresentecao-imagem">
+        <img src="../assets/img/Portao1.png" alt="Portão principal" />
+      </div>
 
-  
-    <div class="quem-somos-nos">
-      <h1>QUEM SOMOS NÓS?</h1>
-      <p> Desde 2011 somos uma empresa independente de confecção de portões, voltada para serviços de 
-      pequeno porte, como: casas, sobrados, condomínios, etc. A empresa Vitória Alumínios exerce grande inflência na região norte de Santa Catarina,
-      em cidades como: Balneário Barra do Sul, Joinville, São Francisco do Sul, Araquari e Balneário Piçarras. </p> 
-      <p>Esta empresa foi fundada por Benício Padilha, em união com sua família, que é de grande importância para o sucesso laboral.</p>
-    </div>
+      <div class="apresentacao-texto">
+        <h1>A principal no setor em Barra do Sul e região</h1>
+        <p>Encontre uma variedade de portões e faça o seu orçamento</p>
+      </div>
+    </section>
   </section>
-  
-  <section class="objetivos">
-    <div>
-      <h2>VISÃO</h2>
-      <p>A empresa Vitória Alumínios visa consolidar-se em seu ramo na região norte de SC.</p>
-    </div>
 
-    <div>
-      <h2>MISSÃO</h2>
-      <p>Nossa missão esta relacionada em garantir a segurança dos cidadãos, bem como proporcionar
-      uma experiência estética favorável ao estilo dos clientes.
-      </p>
-    </div>
+  <section class="secao-objetivos">
+    <section class="bloco-objetivos">
+      <div>
+        <img src="../assets/img/visao-empresa.jpg" alt="Visão da empresa" />
+        <h3>VISÃO</h3>
+        <p>A empresa Vitória Alumínios visa consolidar-se em seu ramo na região norte de SC.</p>
+      </div>
 
-    <div>
-      <h2>VALORES</h2>
-      <ul>
-        <li>Integridade;</li>
-        <li>Responsabilidade social;</li>
-        <li>Respeito; </li>
-        <li>Trabalho em equipe;</li>
-        <li>Inovação;</li>  
-        <li>Foco no cliente;</li>
-        <li>Família.</li> 
-      </ul>
-    </div>
-</section>
+      <div>
+        <img src="../assets/img/missao-empresa.jpg" alt="Missão da empresa" />
+        <h3>MISSÃO</h3>
+        <p>
+          Nossa missão esta relacionada em garantir a segurança dos cidadãos, bem como proporcionar
+          uma experiência estética favorável ao estilo dos clientes.
+        </p>
+      </div>
 
-<!-- <section class="sponsorship">
+      <div>
+        <img src="../assets/img/valores-empresa.jpg" alt="Valores da empresa" />
+        <h3>VALORES</h3>
+        <ul>
+          <li>Integridade;</li>
+          <li>Responsabilidade social;</li>
+          <li>Respeito;</li>
+          <li>Trabalho em equipe;</li>
+          <li>Inovação;</li>
+          <li>Foco no cliente;</li>
+          <li>Família.</li>
+        </ul>
+      </div>
+    </section>
+  </section>
+
+  <section class="secao-quem-somos">
+    <section class="bloco-quem-somos">
+      <img src="../assets/img/portaoquinze.jpg" alt="Portão top" />
+
+      <div>
+        <h2>QUEM SOMOS NÓS</h2>
+        <p>
+          Desde 2011 somos uma empresa independente de confecção de portões, voltada para serviços
+          de pequeno porte, como: casas, sobrados, condomínios, etc. A empresa Vitória Alumínios
+          exerce grande influência na região norte de Santa Catarina, em cidades como: Balneário
+          Barra do Sul, Joinville, São Francisco do Sul, Araquari e Balneário Piçarras.
+        </p>
+        <p>
+          Esta empresa foi fundada por Benício Padilha, em união com sua família, que é de grande
+          importância para o sucesso laboral.
+        </p>
+      </div>
+    </section>
+  </section>
+
+  <section class="secao-avaliacao">
+    <section>
+      <h1>Quem nos contrata recomenda</h1>
+      <section class="bloco-avaliacao">
+        <div>
+          <img src="../assets/img/aspas.svg" alt="Aspas">
+          <p>Fui muito bem atendida, o profissional foi muito educado e fez um trabalho de qualidade. Valeu a pena, orçamento grátis e não é careiro.</p>
+          <p><span>Ana Paula, de Joinville</span></p>
+        </div>
+        <div>
+          <img src="../assets/img/aspas.svg" alt="Aspas">
+          <p>Excelente serviço! O portão que encomendei ficou impecável, com acabamento de alta qualidade e muita atenção aos detalhes.</p>
+          <p><span>José Luís, de Balneário Barra do Sul</span></p>
+        </div>
+        <div>
+          <img src="../assets/img/aspas.svg" alt="Aspas">
+          <p>A equipe foi extremamente profissional, desde o atendimento até a instalação. Recomendo para quem busca um trabalho eficiente e bem-feito.</p>
+          <p><span>Renilda Miranda, de Joinville</span></p>
+        </div>
+      </section>
+    </section>
+  </section>
+
+  <!-- <section class="sponsorship">
   <div> 
     <h1>Patrocinadores e Lojas</h1> 
 
@@ -94,76 +139,158 @@
     </div>
   </div>
 </section> -->
-
 </template>
 
 <style scoped>
+.secao-apresentacao {
+  display: grid;
+  justify-items: center;
+  padding: 5rem 0;
+}
 
-  .carrossel {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 7rem;
-    min-height: 10rem;
+.bloco-apresentacao {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  box-shadow:
+    0 0 8px 1px var(--cor-sombra),
+    4px 4px 8px 1px var(--cor-sombra);
+  border-radius: 15px;
+  width: 90%;
+}
+
+.apresentecao-imagem > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px 0 0 15px;
+}
+
+.apresentacao-texto {
+  display: flex;
+  row-gap: 0.5rem;
+  flex-direction: column;
+  justify-content: center;
+  font-family: var(--fonte-corpo);
+  padding: 0 2rem;
+
+  & h1 {
+    font-size: 3rem;
+    font-weight: 600;
   }
 
-  .carrossel-imagem {
-    display: grid;
-    justify-items: center;
-    align-items: center;
+  & p {
+    font-size: 1.5rem;
+    color: var(--cor-fonte-branco-complementar);
+  }
+}
 
+.secao-objetivos {
+  display: grid;
+  justify-items: center;
+  background-color: var(--cor-branco-secao);
+}
+
+.bloco-objetivos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 80%;
+  padding: 5rem 0;
+  gap: 1.5rem;
+}
+
+.bloco-objetivos div {
+  background-color: var(--cor-branco);
+  border-radius: 1rem;
+  box-shadow:
+    0 0 8px 1px var(--cor-sombra),
+    4px 4px 8px 1px var(--cor-sombra);
+
+  & img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem 1rem 0 0;
   }
 
-  .carrossel-imagem img {
-    width: 90%;
-    height: 90%;
+  & h3 {
+    font-family: var(--fonte-titulo);
+    text-align: center;
+    padding: 1rem 0;
   }
 
-  .quem-somos-nos {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  & p {
+    font-size: 1rem;
     padding: 1rem;
-
-    & h1 {
-      font-size: 2.7rem;
-    }
-    
-    & p {
-      font-size: 1.5rem;
-    }
+    color: var(--cor-fonte-branco-complementar);
   }
 
-  .objetivos {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 1rem;
-    gap: 1.5rem;
+  & ul li {
+    list-style-type: disc;
+    font-size: 1rem;
+    color: var(--cor-fonte-branco-complementar);
   }
+}
 
-  .objetivos div {
-    padding: 2rem 1rem;
-    font-size: larger;
-    background-color: white;
-    border: solid;
-    box-shadow: 5px 10px grey;
+.secao-quem-somos {
+  display: grid;
+  justify-items: center;
+  padding: 5rem 0;
+}
+
+.bloco-quem-somos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80%;
+
+  & img {
+    width: 100%;
     border-radius: 1rem;
-
-    & h2 {
-      font-family: var(--fonte-titulo);
-    }
-
-    & p {
-      font-size: 1.5rem;
-    }
-
-    & ul li {
-      list-style-type: disc;
-      font-size: 1.5rem;
-    } 
+    box-shadow:
+      0 0 8px 1px var(--cor-sombra),
+      4px 4px 8px 1px var(--cor-sombra);
   }
 
-  @media (max-width: 700px) {
-    .objetivos {
+  & div {
+    padding: 1rem;
+
+    & p {
+      color: var(--cor-fonte-branco-complementar);
+    }
+  }
+}
+
+.secao-avaliacao {
+  display: grid;
+  justify-items: center;
+  padding: 5rem 0;
+}
+
+.secao-avaliacao > section {
+  width: 90%;
+
+  & h1 {
+    text-align: center;
+    padding: 1rem 0;
+  }
+}
+
+.bloco-avaliacao {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.bloco-avaliacao div {
+  padding: 1rem;
+
+  & p {
+    padding: .5rem 0 0 2rem;
+
+    & span {
+      font-weight: bold;
+    }
+  }
+}
+
+/* @media (max-width: 700px) {
+    .bloco-objetivos {
       grid-template-columns: 1fr;
     }
   }
@@ -181,7 +308,7 @@
     .quem-somos-nos{
       padding: 0 1rem;
     }
-  }
+  } */
 /* 
   .sponsorship {
     display: grid;
@@ -208,7 +335,4 @@
     background-color: black;
     transition: 1s;
   } */
-
-  
-  
 </style>
