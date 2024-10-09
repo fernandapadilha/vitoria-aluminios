@@ -10,7 +10,7 @@
          </p>
         
          <ul>
-            <h5>Institucional</h5>
+            <h6>Institucional</h6>
             <li> Sobre nós</li>
             <li> Relações com investidores</li>
             <li>Trabalhe conosco</li>
@@ -23,7 +23,7 @@
 
       <div class="information">
          <ul>
-            <h5>Fale conosco</h5>
+            <h6>Fale conosco</h6>
             <li>Email</li>
             <li>Telefone</li>
             <li>Perguntas frequentes</li>
@@ -62,7 +62,6 @@
    justify-content: center;
    align-items: center;
    padding: 3rem 2rem;
-   margin-top: 5rem;
    background-color: #A61B0F ;
 }
 
@@ -75,9 +74,10 @@
 
 .rodape-icones {
    display: grid;
+   justify-content: start;
    grid-template-columns: auto auto auto;
-   justify-content: center;
    column-gap: 2.5rem;
+   margin: 4%;
 }
 
 .rodape-icones a svg {
@@ -92,7 +92,7 @@
    padding: 1rem;
    display: grid;
    row-gap: 1rem;
-   margin-top: 5rem;
+   margin-top: 8.5rem;
    margin-right: 30rem;
    color: var(--cor-branco);
 }

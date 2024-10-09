@@ -5,8 +5,6 @@ import img2 from "@/assets/img/portaoquinze.jpg"
 import img3 from "@/assets/img/portaodezoito.jpg"
 import img4 from "@/assets/img/portaonove.jpg"
 import img5 from "@/assets/img/portaoum.jpg"
-import OrcamentoView from "./OrcamentoView.vue"
-
 import router from "@/router"
 
 const produtos = [
