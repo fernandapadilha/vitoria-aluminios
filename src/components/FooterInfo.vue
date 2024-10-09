@@ -1,14 +1,37 @@
 <script setup></script>
 
 <template>
-  <footer class="rodape">
-    <div class="rodape-descricao">
-      <h1>VITÓRIA ALUMÍNIOS</h1>
-      <p>
-        A Vitória Alumínios é uma empresa especializada na confecção de portões de alumínio
-        personalizados.
-      </p>
-    </div>
+   <footer class="rodape">
+      <div class="rodape-descricao">
+         <h1>VITÓRIA ALUMÍNIOS</h1>
+         <p>
+            A Vitória Alumínios é uma empresa especializada na confecção de portões de alumínio
+            personalizados.
+         </p>
+        
+         <ul>
+            <h6>Institucional</h6>
+            <li> Sobre nós</li>
+            <li> Relações com investidores</li>
+            <li>Trabalhe conosco</li>
+            <li>Para empresas</li>
+            <li>Política de privacidade</li>
+            <li>Termos de uso</li>
+            <li>Compromisso de integridade</li>
+         </ul>
+      </div>
+
+      <div class="information">
+         <ul>
+            <h6>Fale conosco</h6>
+            <li>Email</li>
+            <li>Telefone</li>
+            <li>Perguntas frequentes</li>
+            <li>Para empresas</li>
+            <li>Depoimentos</li>
+            <li>Endereço</li>
+         </ul>
+      </div>
 
     <div class="rodape-icones">
       <a href="https://www.facebook.com/vitoria.aluminio.5">
@@ -56,13 +79,12 @@
 
 <style scoped>
 .rodape {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  justify-content: center;
-  align-items: center;
-  padding: 3rem 2rem;
-  margin-top: 5rem;
-  background-color: var(--cor-cinza-2);
+   display: grid;
+   grid-template-columns: 2fr 1fr;
+   justify-content: center;
+   align-items: center;
+   padding: 3rem 2rem;
+   background-color: #A61B0F ;
 }
 
 .rodape-descricao {
@@ -73,10 +95,11 @@
 }
 
 .rodape-icones {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  justify-content: center;
-  column-gap: 2.5rem;
+   display: grid;
+   justify-content: start;
+   grid-template-columns: auto auto auto;
+   column-gap: 2.5rem;
+   margin: 4%;
 }
 
 .rodape-icones a svg {
@@ -86,6 +109,14 @@
 
 .rodape-icones a svg:hover {
   color: var(--cor-principal);
+}
+.information{
+   padding: 1rem;
+   display: grid;
+   row-gap: 1rem;
+   margin-top: 8.5rem;
+   margin-right: 30rem;
+   color: var(--cor-branco);
 }
 
 @media (max-width: 630px) {

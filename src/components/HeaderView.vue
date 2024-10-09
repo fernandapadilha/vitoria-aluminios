@@ -38,14 +38,14 @@
 
 <style scoped>
 .principal {
-  display: grid;
-  grid-template-columns: auto auto;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2rem;
-  background-color: var(--cor-cinza-3);
-  color: var(--cor-branco);
-}
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #A61B0F;
+    color: var(--cor-branco);
+  }
 
 .principal-titulo {
   color: var(--cor-branco);
@@ -63,9 +63,9 @@
   }
 }
 
-.principal-menu {
-  background-color: var(--cor-cinza-2);
-}
+  .principal-menu {
+    background-color: #D4D9D2;
+  }
 
 .principal-menu-lista {
   display: grid;
@@ -77,10 +77,10 @@
   padding: 1rem;
 }
 
-.principal-menu-lista li a {
-  color: var(--cor-branco);
-  text-decoration: none;
-}
+  .principal-menu-lista li a {
+    color: black;
+    text-decoration: none;
+  }
 
 @media (max-width: 410px) {
   .cadastro p {

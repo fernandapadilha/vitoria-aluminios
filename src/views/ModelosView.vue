@@ -1,103 +1,64 @@
-<script setup></script>
+<script setup>
+
+import img1 from "@/assets/img/portaodezesete.jpg"
+import img2 from "@/assets/img/portaoquinze.jpg"
+import img3 from "@/assets/img/portaodezoito.jpg"
+import img4 from "@/assets/img/portaonove.jpg"
+import img5 from "@/assets/img/portaoum.jpg"
+import router from "@/router"
+
+const produtos = [
+  {
+    id: 1,
+    nome: "Perfil Estrutural do Portão branco de Alumínio",
+    preco: "R$2500,00",
+    img: img1
+  },
+  {
+    id: 2,
+    nome: "Perfil Estrutural do Portão branco de Alumínio",
+    preco: "R$1500,00",
+    img: img2
+  },
+  {
+    id: 3,
+    nome: "Perfil Estrutural do Portão branco de Alumínio",
+    preco: "R$4500,00",
+    img: img3
+  },
+  {
+    id: 4,
+    nome: "Perfil Estrutural do Portão preto de Alumínio",
+    preco: "R$500,00",
+    img: img4
+  },
+  {
+    id: 5,
+    nome: "Perfil Estrutural do Portão preto de Alumínio",
+    preco: "R$1200,00",
+    img: img5
+  },
+]
+
+function comprar() {
+  router.push(`/orcamento`)
+
+}
+
+</script>
 
 <template>
+
   <h1 class="titulo-principal">Modelos de Portões</h1>
 
-  <main class="modelos">
-    <section class="modelos-produto">
-      <img
-        class="modelos-produto-portao"
-        src="@/assets/img/portaodezesete.jpg"
-        alt="portaobranco"
-      />
-      <p>Perfil Estrutural do Portão branco de Alumínio</p>
-      <img
-        class="modelos-produto-avaliacao"
-        src="@/assets/img/avaliacao.png"
-        alt="iconeavaliacao"
-      />
-      <p class="modelos-produto-preco">R$2500,00</p>
-    </section>
+  <main class="grid-models">
 
-    <section class="modelos-produto">
-      <img class="modelos-produto-portao" src="@/assets/img/portaoquinze.jpg" alt="portaobranco" />
-      <p>Perfil Estrutural do Portão branco de Alumínio</p>
-      <img
-        class="modelos-produto-avaliacao"
-        src="@/assets/img/avaliacao.png"
-        alt="iconeavaliacao"
-      />
-      <p class="modelos-produto-preco">R$1550,00</p>
-    </section>
-
-    <section class="modelos-produto">
-      <img class="modelos-produto-portao" src="@/assets/img/portaodezoito.jpg" alt="portaobranco" />
-      <p>Perfil Estrutural do Portão branco de Alumínio</p>
-      <img
-        class="modelos-produto-avaliacao"
-        src="@/assets/img/avaliacao.png"
-        alt="iconeavaliacao"
-      />
-      <P class="modelos-produto-preco">R$1200,00</P>
-    </section>
-
-    <section class="modelos-produto">
-      <img class="modelos-produto-portao" src="@/assets/img/cachorreira.png" alt="portaopreto" />
-      <p>Perfil Estrutural do Portão preto de Alumínio</p>
-      <img
-        class="modelos-produto-avaliacao"
-        src="@/assets/img/avaliacao.png"
-        alt="iconeavaliacao"
-      />
-      <p class="modelos-produto-preco">R$1200,00</p>
-    </section>
-
-    <section class="modelos-produto">
-      <img class="modelos-produto-portao" src="@/assets/img/portao-social.png" alt="portaopreto" />
-      <p>Perfil Estrutural do Portão preto de Alumínio</p>
-      <img
-        class="modelos-produto-avaliacao"
-        src="@/assets/img/avaliacao.png"
-        alt="iconeavaliacao"
-      />
-      <p class="modelos-produto-preco">R$1500,00</p>
-    </section>
-
-    <section class="modelos-produto">
-      <img class="modelos-produto-portao" src="@/assets/img/portaoum.jpg" alt="portaobranco" />
-      <p>Perfil Estrutural do Portão branco de Alumínio</p>
-      <img
-        class="modelos-produto-avaliacao"
-        src="@/assets/img/avaliacao.png"
-        alt="iconeavaliacao"
-      />
-      <p class="modelos-produto-preco">R$2500,00</p>
-    </section>
-
-    <section class="modelos-produto">
-      <img class="modelos-produto-portao" src="@/assets/img/portaoquatro.jpg" alt="portaobranco" />
-      <p>Perfil Estrutural do Portão branco de Alumínio</p>
-      <img
-        class="modelos-produto-avaliacao"
-        src="@/assets/img/avaliacao.png"
-        alt="iconeavaliacao"
-      />
-      <p class="modelos-produto-preco">R$1800,00</p>
-    </section>
-
-    <section class="modelos-produto">
-      <img
-        class="modelos-produto-portao"
-        src="@/assets/img/portao-com-portao-social.png"
-        alt="portaobranco"
-      />
-      <p>Perfil Estrutural do Portão branco de Alumínio</p>
-      <img
-        class="modelos-produto-avaliacao"
-        src="@/assets/img/avaliacao.png"
-        alt="iconeavaliacao"
-      />
-      <p class="modelos-produto-preco">R$2000,00</p>
+    <section class="models-products" v-for="produto in produtos" :key="produto.id">
+      <img class="foto-portao" :src="produto.img" alt="portaobranco" />
+      <p>{{ produto.nome}}</p>
+      <img class="avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
+      <p class="p">{{produto.preco}}</p>
+      <button @click="comprar" class="button">Comprar</button>
     </section>
   </main>
 </template>
@@ -109,26 +70,26 @@
   margin-top: 5rem;
 }
 
-.modelos {
+.grid-models {
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); */
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  padding: 5rem;
   gap: 2rem;
 }
 
-.modelos-produto {
-  display: grid;
-  row-gap: 0.5rem;
+.models-products {
+  /* display: grid; */
+  row-gap: .5rem;
   padding: 1rem;
   text-align: center;
   border: 1px solid rgb(221, 221, 221);
-  border-radius: 10px;
-  font-family: 'Barlow Condensed', sans-serif;
+  border-radius: 4%;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 500;
   font-style: italic;
 }
 
-.modelos-produto-portao {
+.foto-portao {
   height: 20rem;
   width: 95%;
   border-radius: 10px;
@@ -137,11 +98,11 @@
   object-fit: cover;
 }
 
-.modelos-produto p {
+.models-products p {
   margin: 0;
 }
 
-.modelos-produto-avaliacao {
+.avaliacao {
   width: 8rem;
   max-height: 3rem;
   object-fit: cover;
@@ -149,21 +110,17 @@
   display: block;
 }
 
-.modelos-produto-preco {
-  font-family: 'Barlow Condensed', sans-serif;
+.p {
+  font-family: "Barlow Condensed", sans-serif;
   font-weight: 800;
   font-style: italic;
 }
+.button {
+  width: 7.5rem;
+  background-color: #A61B0F;
+  color: white;
+  border-radius: 3px;
+  border: 3px;
 
-@media (max-width: 950px) {
-  .modelos {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 650px) {
-  .modelos {
-    grid-template-columns: 1fr;
-  }
 }
 </style>
