@@ -1,4 +1,17 @@
-<script setup></script>
+<script setup>
+import { useRouter } from 'vue-router';
+import { usarModeloStore } from '@/stores/modelo';
+
+const modeloStore = usarModeloStore();
+const router = useRouter();
+
+function visualizar(id) {
+  router.push(`/modelo/${id}`) //template string
+}
+
+const imageUrl = (img) => new URL(`../assets/img/${img}`, import.meta.url).href
+
+</script>
 
 <template>
 
@@ -6,60 +19,12 @@
 
   <main class="modelos">
 
-    <section class="modelos-produto">
-      <img class="modelos-produto-portao" src="@/assets/img/portaodezesete.jpg" alt="portaobranco" />
-      <p>Perfil Estrutural do Portão branco de Alumínio</p>
+    <section class="modelos-produto" v-for="modelo in modeloStore.modelos" :key="modelo.id">
+      <img class="modelos-produto-portao" :src="imageUrl" alt="portãoBranco" />
+      <p>{{ modelo.nome }}</p>
       <img class="modelos-produto-avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
-      <p class="modelos-produto-preco">R$2500,00</p>
-    </section>
-
-    <section class="modelos-produto">
-      <img class="modelos-produto-portao" src="@/assets/img/portaoquinze.jpg" alt="portaobranco" />
-      <p>Perfil Estrutural do Portão branco de Alumínio</p>
-      <img class="modelos-produto-avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
-      <p class="modelos-produto-preco">R$1550,00</p>
-    </section>
-
-    <section class="modelos-produto">
-      <img class="modelos-produto-portao" src="@/assets/img/portaodezoito.jpg" alt="portaobranco" />
-      <p>Perfil Estrutural do Portão branco de Alumínio</p>
-      <img class="modelos-produto-avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
-      <P class="modelos-produto-preco">R$1200,00</P>
-    </section>
-
-    <section class="modelos-produto">
-      <img class="modelos-produto-portao" src="@/assets/img/cachorreira.png" alt="portaopreto" />
-      <p>Perfil Estrutural do Portão preto de Alumínio</p>
-      <img class="modelos-produto-avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
-      <p class="modelos-produto-preco">R$1200,00</p>
-    </section>
-
-    <section class="modelos-produto">
-      <img class="modelos-produto-portao" src="@/assets/img/portao-social.png" alt="portaopreto" />
-      <p>Perfil Estrutural do Portão preto de Alumínio</p>
-      <img class="modelos-produto-avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
-      <p class="modelos-produto-preco">R$1500,00</p>
-    </section>
-
-    <section class="modelos-produto">
-      <img class="modelos-produto-portao" src="@/assets/img/portaoum.jpg" alt="portaobranco" />
-      <p>Perfil Estrutural do Portão branco de Alumínio</p>
-      <img class="modelos-produto-avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
-      <p class="modelos-produto-preco">R$2500,00</p>
-    </section>
-
-    <section class="modelos-produto">
-      <img class="modelos-produto-portao" src="@/assets/img/portaoquatro.jpg" alt="portaobranco" />
-      <p>Perfil Estrutural do Portão branco de Alumínio</p>
-      <img class="modelos-produto-avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
-      <p class="modelos-produto-preco">R$1800,00</p>
-    </section>
-
-    <section class="modelos-produto">
-      <img class="modelos-produto-portao" src="@/assets/img/portao-com-portao-social.png" alt="portaobranco" />
-      <p>Perfil Estrutural do Portão branco de Alumínio</p>
-      <img class="modelos-produto-avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
-      <p class="modelos-produto-preco">R$2000,00</p>
+      <p class="modelos-produto-preco">{{ modelo.preco }}</p>
+      <button @click="visualizar(modelo.id)" class="botao">Comprar</button>
     </section>
 
   </main>
@@ -119,6 +84,14 @@
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 800;
   font-style: italic;
+}
+
+.botao {
+  width: 7.5rem;
+  background-color: #A61B0F;
+  color: white;
+  border-radius: 3px;
+  border: 3px;
 }
 
 @media (max-width: 950px) {
