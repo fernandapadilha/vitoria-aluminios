@@ -1,4 +1,9 @@
-<script setup></script>
+<script setup>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+
+import 'swiper/css';
+
+</script>
 
 <template>
   <section class="secao-apresentacao">
@@ -49,7 +54,17 @@
 
   <section class="secao-quem-somos">
     <section class="bloco-quem-somos">
-      <img src="../assets/img/portaoquinze.jpg" alt="Portão top" />
+      <swiper class="my-swiper" loop> 
+        <swiper-slide>
+          <img src="../assets/img/portao-carrossel1.png" alt="Portão top" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="../assets/img/portao-carrossel2.png" alt="Portão top" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="../assets/img/portao-carrossel3.png" alt="Portão top" />
+        </swiper-slide>
+      </swiper>
 
       <div>
         <h2>QUEM SOMOS NÓS</h2>
@@ -67,55 +82,6 @@
     </section>
   </section>
 
-   <section class="sponsorship">
-  <div> 
-    <h1>Patrocinadores e Lojas</h1> 
-
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
-
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-50" src="@/assets/img/guapore.png" alt="First slide">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>...</h5>
-            <p>...</p>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <img class="d-block w-50" src="@/assets/img/casa_aluminios.png" alt="Second slide">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>...</h5>
-            <p>...</p>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <img class="d-block w-50" src="@/assets/img/guapore.png" alt="Third slide">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>...</h5>
-            <p>...</p>
-          </div>
-        </div>
-      </div>
-
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  </div>
-</section> 
 
   <section class="secao-avaliacao">
     <section>
@@ -143,6 +109,30 @@
 </template>
 
 <style scoped>
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
 .secao-apresentacao {
   display: grid;
   justify-items: center;
@@ -258,15 +248,6 @@
   }
 }
 
-.sponsorship div h1 {
-  text-align: center;
-
-
- & div img carousel-item {
-  width: 100%;
- }
-
-}
 
 .secao-avaliacao {
   display: grid;
@@ -320,30 +301,5 @@
       padding: 0 1rem;
     }
   } */
-/* 
-  .sponsorship {
-    display: grid;
-    justify-content: center;
-    padding: 1rem;
-    border: 1.5px solid black;
-    border-radius: 1rem;
-    background-color: grey;
-    cursor: pointer;
-    transition: 1s;
-  }
-
-  .sponsorship div{
-    background-color: white;
-    border: 1.5px solid black;
-    border-radius: 1rem;
-    padding: 1rem; 
-    font-size: larger;
-  }
-  
-  
-  .sponsorship:hover {
-    border: 3px solid blue;
-    background-color: black;
-    transition: 1s;
-  }*/
+ 
 </style>
