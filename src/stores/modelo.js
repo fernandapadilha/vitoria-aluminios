@@ -7,31 +7,31 @@ export const usarModeloStore = defineStore('modelo', () => {
           id: 1,
           nome: "Perfil Estrutural do Portão branco de Alumínio",
           preco: "R$2500,00",
-          img: '@/assets/img/portaodezesete.jpg'
+          img: 'portaodezesete.jpg'
         },
         {
           id: 2,
           nome: "Perfil Estrutural do Portão branco de Alumínio",
           preco: "R$1500,00",
-          img: "@/assets/img/portaoquinze.jpg"
+          img: "portaoquinze.jpg"
         },
         {
           id: 3,
           nome: "Perfil Estrutural do Portão branco de Alumínio",
           preco: "R$4500,00",
-          img: "@/assets/img/portaodezoito.jpg"
+          img: "portaodezoito.jpg"
         },
         {
           id: 4,
           nome: "Perfil Estrutural do Portão preto de Alumínio",
           preco: "R$500,00",
-          img: "@/assets/img/portaonove.jpg"
+          img: "portaonove.jpg"
         },
         {
           id: 5,
           nome: "Perfil Estrutural do Portão preto de Alumínio",
           preco: "R$1200,00",
-          img: "@/assets/img/portaoum.jpg"
+          img: "portaoum.jpg"
         },
       ])
 

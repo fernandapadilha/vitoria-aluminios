@@ -7,9 +7,9 @@ const router = useRouter();
 
 function visualizar(id) {
   router.push(`/modelo/${id}`) //template string
-}
+};
 
-const imageUrl = (img) => new URL(`../assets/img/${img}`, import.meta.url).href
+const imageUrl = (img) => new URL(`@/assets/img/${img}`, import.meta.url).href;
 
 </script>
 
