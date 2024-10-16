@@ -21,13 +21,13 @@ import 'swiper/css';
 
   <section class="secao-objetivos">
     <section class="bloco-objetivos">
-      <div>
+      <div class="item-objetivos">
         <img src="../assets/img/visao-empresa.jpg" alt="Visão da empresa" />
         <h3>VISÃO</h3>
         <p>A empresa Vitória Alumínios visa consolidar-se em seu ramo na região norte de SC.</p>
       </div>
 
-      <div>
+      <div class="item-objetivos">
         <img src="../assets/img/missao-empresa.jpg" alt="Missão da empresa" />
         <h3>MISSÃO</h3>
         <p>
@@ -36,7 +36,7 @@ import 'swiper/css';
         </p>
       </div>
 
-      <div>
+      <div class="item-objetivos">
         <img src="../assets/img/valores-empresa.jpg" alt="Valores da empresa" />
         <h3>VALORES</h3>
         <ul>
@@ -109,6 +109,17 @@ import 'swiper/css';
 </template>
 
 <style scoped>
+
+.item-objetivos {
+  transition: width .5s ease;
+  width: 100%;
+}
+
+.item-objetivos:hover {
+  transition: width 1s ease;
+  width: calc(100% + 10px);
+}
+
 .swiper {
   width: 100%;
   height: 100%;
