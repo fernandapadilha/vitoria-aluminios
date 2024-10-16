@@ -9,7 +9,7 @@ function visualizar(id) {
   router.push(`/modelo/${id}`) //template string
 };
 
-const imageUrl = (img) => new URL(`@/assets/img/${img}`, import.meta.url).href;
+// const imageUrl = (img) => new URL(`@/assets/img/${img}`, import.meta.url).href;
 
 </script>
 
@@ -20,7 +20,7 @@ const imageUrl = (img) => new URL(`@/assets/img/${img}`, import.meta.url).href;
   <main class="modelos">
 
     <section class="modelos-produto" v-for="modelo in modeloStore.modelos" :key="modelo.id">
-      <img class="modelos-produto-portao" :src="imageUrl" alt="portãoBranco" />
+      <img class="modelos-produto-portao" :src="modelo.img" alt="portãoBranco" />
       <p>{{ modelo.nome }}</p>
       <img class="modelos-produto-avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
       <p class="modelos-produto-preco">{{ modelo.preco }}</p>
@@ -53,7 +53,7 @@ const imageUrl = (img) => new URL(`@/assets/img/${img}`, import.meta.url).href;
   row-gap: .5rem;
   padding: 1rem;
   text-align: center;
-  border: 1px solid rgb(221, 221, 221);
+  border: 1px solid var(--cor-cinza-1);
   border-radius: 10px;
   font-family: "Barlow Condensed", sans-serif;
   font-style: italic;
@@ -88,8 +88,8 @@ const imageUrl = (img) => new URL(`@/assets/img/${img}`, import.meta.url).href;
 
 .botao {
   width: 7.5rem;
-  background-color: #A61B0F;
-  color: white;
+  background-color: var(--cor-principal);
+  color: var(--cor-branco);
   border-radius: 3px;
   border: 3px;
 }
