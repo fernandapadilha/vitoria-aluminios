@@ -17,16 +17,21 @@ onMounted(() => {
 
     <main>
         <section class="secao-compra">
-            <img class="foto-portao" :src="modelo.img" alt="portãoBranco">
 
-            <section class="bloco-informacao">
+            <section class="bloco-titulo">
                 <h2>{{ modelo.nome }}</h2>
                 <div>
                     <p>4,7</p> 
                     <img src="@/assets/img/avaliacao.png" alt="avaliação">
                 </div>
-                <h3>Média de Preço: R$ 1.200,00</h3>
+            </section>
 
+            <section class="bloco-imagem">
+                <img :src="modelo.img" alt="portãoBranco">
+            </section>
+
+            <section class="bloco-informacao">
+                <h3>Média de Preço: {{ modelo.preco }}</h3>
                 <h6>O que você precisa saber sobre este produto</h6>
                 <ul v-for="(informacao, index) in modelo.descricao" :key="index">
                     <li>{{ informacao }}</li>
@@ -52,19 +57,43 @@ onMounted(() => {
     }
 
     .secao-compra {
-        display: grid;
-        grid-template-columns: 1fr 1.5fr;
-        width: 80%;
+        width: 90%;
     }
 
-    .foto-portao {
+    .bloco-imagem {
         display: grid;
         align-items: center;
-        width: 100%;
+
+        & img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    }
+
+    .bloco-titulo {
+        padding: 1rem 0;
+
+        & div {
+            display: grid;
+            grid-template-columns: 2rem auto;
+            align-items: center;
+
+            & p {
+                display: grid;
+                align-items: center;
+            }
+
+            & img {
+                width: 8rem;
+                max-height: 2rem;
+                object-fit: cover; 
+            }
+        }
     }
 
     .bloco-informacao {
-       padding: 1rem; 
+        display: grid;
+        padding: 1rem 0; 
 
        & h3 {
             padding: .8rem 0;
@@ -93,10 +122,23 @@ onMounted(() => {
     }
 
     .bloco-informacao > ul {
-        
         & li {
             list-style-type: disc;
         }
-        
+    }
+
+    @media (min-width: 790px) {
+        .secao-compra {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .bloco-imagem {
+            grid-row: 1 / 3;
+        }
+
+        .bloco-titulo, .bloco-informacao {
+            padding: 1rem;
+        }
     }
 </style>
