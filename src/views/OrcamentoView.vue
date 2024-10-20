@@ -1,27 +1,27 @@
 <script setup>
-import { ref } from 'vue';
-import SelecaoTubo from '../components/SelecaoTubo.vue';
-import SelecaoCor from '../components/SelecaoCor.vue';
-import SelecaoAcessorio from '../components/SelecaoAcessorio.vue';
+import { ref } from 'vue'
+import SelecaoTubo from '../components/SelecaoTubo.vue'
+import SelecaoCor from '../components/SelecaoCor.vue'
+import SelecaoAcessorio from '../components/SelecaoAcessorio.vue'
 
 const tubos = ref([
-    {   
-        id: 1, 
-        nome: 'Redondo', 
-        preco: 60, 
-        descricao: 'Tubo para portão formato 3x4 redondo',
-        img: 'tubo-redondo-branco.png',
-        alt: 'Tubo redondo branco'
-    },
-    {  
-        id: 2, 
-        nome: 'Quadrado', 
-        preco: 49, 
-        descricao: 'Tubo para portão formato 12x25 quadrado',
-        img: 'tubo-quadrado-branco.png',
-        alt: 'Tubo quadrado branco'
-    }
-]);
+  {
+    id: 1,
+    nome: 'Redondo',
+    preco: 60,
+    descricao: 'Tubo para portão formato 3x4 redondo',
+    img: 'tubo-redondo-branco.png',
+    alt: 'Tubo redondo branco'
+  },
+  {
+    id: 2,
+    nome: 'Quadrado',
+    preco: 49,
+    descricao: 'Tubo para portão formato 12x25 quadrado',
+    img: 'tubo-quadrado-branco.png',
+    alt: 'Tubo quadrado branco'
+  }
+])
 
 const cores = ref([
     {
@@ -127,7 +127,7 @@ const acessorios = ref([
     .formulario-botao button {
         background-color: var(--cor-principal);
         color: var(--cor-branco);
-        box-shadow: 2px 2px 3px 3px var(--cor-branco);
+        box-shadow: 2px 2px 3px 3px var(--cor-sombra);
     }
 
     @media(max-width: 630px) {

@@ -1,26 +1,25 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, ref } from 'vue'
 defineProps({
-    tubos: Object,
-});
+  tubos: Object
+})
 
 const tuboSelecionado = ref({
-    id: "", 
-    nome: "", 
-    preco: 0, 
-    descricao: "", 
-    img: "",
-    alt: ''
-});
+  id: '',
+  nome: '',
+  preco: 0,
+  descricao: '',
+  img: '',
+  alt: ''
+})
 
 const imageUrl = computed(
-    () => new URL(`../assets/img/${tuboSelecionado.value.img}`, import.meta.url).href
-);
+  () => new URL(`../assets/img/${tuboSelecionado.value.img}`, import.meta.url).href
+)
 
 function formatarPreco(preco) {
-    return `R$ ${preco.toFixed(2).replace('.', ',')}`
+  return `R$ ${preco.toFixed(2).replace('.', ',')}`
 }
-
 </script>
 
 <template>
@@ -44,7 +43,7 @@ function formatarPreco(preco) {
             </div>
         </section>
     </article>
-
+    
 </template>
 
 <style scoped>
@@ -62,14 +61,10 @@ function formatarPreco(preco) {
     }
 
     .campo-selecao > div {
-        background-color: var(--cor-white);
-        border: 1px solid var(--cor-white);
-        box-shadow: 2px 2px 3px 3px var(--cor-branco);
+        background-color: var(--cor-branco);
+        border: 1px solid var(--cor-branco);
+        box-shadow: 2px 2px 3px 3px var(--cor-sombra);
         max-height: 10rem;
-    }
-
-    .campo-selecao > div, .campo-selecao div select, .campo-selecao div img {
-        border-radius: 10px;
     }
 
     .campo-selecao div select {
@@ -79,21 +74,25 @@ function formatarPreco(preco) {
         border: none;
     }
 
+    .campo-selecao > div, .campo-selecao div select, .campo-selecao div img {
+      border-radius: 10px;
+    }
+
     .descricao-produto {
-        padding: 1rem;
+      padding: 1rem;
     }
 
     .campo-selecao > div > img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     @media (max-width: 500px) {
-        .campo-selecao {
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr;
-        }
+      .campo-selecao {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
     }
-
+    
 </style>

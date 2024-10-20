@@ -1,41 +1,40 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, ref } from 'vue'
 defineProps({
-    cores: Array
-});
+  cores: Array
+})
 
 const corSelecionada = ref({
-    id: '',
-    nome: '',
-    descricao: '',
-    img: '',
-    alt: ''
-});
+  id: '',
+  nome: '',
+  descricao: '',
+  img: '',
+  alt: ''
+})
 
 const imageUrl = computed(
-    () => new URL(`../assets/img/${corSelecionada.value.img}`, import.meta.url).href
-);
+  () => new URL(`../assets/img/${corSelecionada.value.img}`, import.meta.url).href
+)
 </script>
 
 <template>
-    <article class="campo-informacao">
-        <h5>Cor:</h5>
-        <section class="campo-selecao">
-            <div>
-                <select class="form-select" name="cores" id="cores" v-model="corSelecionada">
-                    <option v-for="cor in cores" :key="cor.id" :value="cor">{{ cor.nome }}</option>
-                </select>
-                <div class="descricao-produto" v-if="corSelecionada.descricao">
-                    <p>{{ corSelecionada.descricao }}</p>
-                </div> 
-            </div>
-                    
-            <div v-if="corSelecionada.img">
-                <img :src="imageUrl" :alt="corSelecionada.alt">
-            </div>
-        </section>
-    </article>
+  <article class="campo-informacao">
+    <h5>Cor:</h5>
+    <section class="campo-selecao">
+      <div>
+        <select class="form-select" name="cores" id="cores" v-model="corSelecionada">
+          <option v-for="cor in cores" :key="cor.id" :value="cor">{{ cor.nome }}</option>
+        </select>
+        <div class="descricao-produto" v-if="corSelecionada.descricao">
+          <p>{{ corSelecionada.descricao }}</p>
+        </div>
+      </div>
 
+      <div v-if="corSelecionada.img">
+        <img :src="imageUrl" :alt="corSelecionada.alt" />
+      </div>
+    </section>
+  </article>
 </template>
 
 <style scoped>
@@ -53,14 +52,14 @@ const imageUrl = computed(
     }
 
     .campo-selecao > div {
-        background-color: var(--cor-white);
-        border: 1px solid var(--cor-white);
-        box-shadow: 2px 2px 3px 3px var(--cor-branco);
+        background-color: var(--cor-branco);
+        border: 1px solid var(--cor-branco);
+        box-shadow: 2px 2px 3px 3px var(--cor-sombra);
         max-height: 10rem;  
     }
 
     .campo-selecao > div, .campo-selecao div select, .campo-selecao div img {
-        border-radius: 10px;
+      border-radius: 10px;
     }
 
     .campo-selecao div select {
@@ -69,22 +68,22 @@ const imageUrl = computed(
         background-color: var(--cor-branco);
         border: none;
     }
-
+    
     .descricao-produto {
-        padding: 1rem;
+      padding: 1rem;
     }
 
     .campo-selecao > div > img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     @media (max-width: 500px) {
-        .campo-selecao {
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr;
-        }
+      .campo-selecao {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
     }
-
+    
 </style>
