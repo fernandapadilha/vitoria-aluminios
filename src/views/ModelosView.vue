@@ -20,20 +20,18 @@ function visualizar(id) {
   <main class="modelos">
 
     <section class="modelos-produto" v-for="modelo in modeloStore.modelos" :key="modelo.id">
+    
       <img class="modelos-produto-portao" :src="modelo.img" alt="portãoBranco" />
       <p>{{ modelo.nome }}</p>
       <img class="modelos-produto-avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
       <p class="modelos-produto-preco">{{ modelo.preco }}</p>
       <button @click="visualizar(modelo.id)" class="botao">Comprar</button>
+
     </section>
-
   </main>
-
-
 </template>
 
 <style scoped>
-
 .titulo-principal {
   text-align: center;
   font-family: var(--fonte-titulo);
@@ -42,8 +40,7 @@ function visualizar(id) {
 
 .modelos {
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); */
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   padding: 1.5rem;
   gap: 2rem;
 }
@@ -53,9 +50,10 @@ function visualizar(id) {
   row-gap: .5rem;
   padding: 1rem;
   text-align: center;
-  border: 1px solid var(--cor-cinza-1);
+  border: 1px solid rgb(221, 221, 221);
   border-radius: 10px;
   font-family: "Barlow Condensed", sans-serif;
+  font-weight: 500;
   font-style: italic;
 }
 
@@ -94,16 +92,9 @@ function visualizar(id) {
   border: 3px;
 }
 
-@media (max-width: 950px) {
-  .modelos {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 @media (max-width: 650px) {
   .modelos {
     grid-template-columns: 1fr;
   }
 }
-
 </style>
