@@ -38,52 +38,52 @@ const imageUrl = computed(
 </template>
 
 <style scoped>
-.campo-informacao {
-  height: 90vh;
-}
 
-.campo-selecao {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 1rem;
-  height: 10rem;
-  color: var(--cor-preto);
-}
+    .campo-informacao {
+        margin: 3rem 0;
+    }
 
-.campo-selecao > div {
-  background-color: var(--cor-cinza-1);
-  border: 1px solid var(--cor-branco);
-  box-shadow: 2px 2px 3px 3px var(--cor-branco);
-  max-height: 10rem;
-}
+    .campo-selecao {
+        display: grid;
+        grid-template-columns: 2.5fr 1fr;
+        column-gap: 1rem;
+        height: 10rem;
+        color: var(--cor-preto);
+    }
 
-.campo-selecao > div,
-.campo-selecao div select,
-.campo-selecao div img {
-  border-radius: 10px;
-}
+    .campo-selecao > div {
+        background-color: var(--cor-branco);
+        border: 1px solid var(--cor-branco);
+        box-shadow: 2px 2px 3px 3px var(--cor-sombra);
+        max-height: 10rem;  
+    }
 
-.campo-selecao div select {
-  width: 100%;
-  padding: 0.6rem 1rem;
-  background-color: var(--cor-cinza-1);
-  border: none;
-}
+    .campo-selecao > div, .campo-selecao div select, .campo-selecao div img {
+      border-radius: 10px;
+    }
 
-.descricao-produto {
-  padding: 1rem;
-}
+    .campo-selecao div select {
+        width: 100%;
+        padding: .6rem 1rem;
+        background-color: var(--cor-branco);
+        border: none;
+    }
+    
+    .descricao-produto {
+      padding: 1rem;
+    }
 
-.campo-selecao > div > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    .campo-selecao > div > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-@media (max-width: 500px) {
-  .campo-selecao {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-}
+    @media (max-width: 500px) {
+      .campo-selecao {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+    }
+    
 </style>
