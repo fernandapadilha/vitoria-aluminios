@@ -1,8 +1,8 @@
 <script setup>
 import { computed, ref } from 'vue'
-defineProps({
-  tubos: Object
-})
+import { usarDadosPortao } from '@/stores/orcamento';
+
+const portao = usarDadosPortao()
 
 const tuboSelecionado = ref({
   id: '',
@@ -29,7 +29,7 @@ function formatarPreco(preco) {
         <section class="campo-selecao">
             <div>
                 <select class="form-select" name="tubos" id="tubos" v-model="tuboSelecionado">
-                    <option v-for="tubo in tubos" :key="tubo.id" :value="tubo">{{ tubo.nome }}</option>
+                    <option v-for="tubo in portao.tubos" :key="tubo.id" :value="tubo">{{ tubo.nome }}</option>
                 </select>
                 
                 <div class="descricao-produto" v-if="tuboSelecionado.descricao">
