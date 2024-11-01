@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue'
-defineProps(['acessorios'])
+import { usarDadosPortao } from '@/stores/orcamento'
+
+const portao = usarDadosPortao()
 
 const acessoriosSelecionados = ref([])
 
@@ -16,7 +18,7 @@ function formatarPreco(preco) {
     <h5>Acessório:</h5>
 
     <section class="campo-selecao">
-      <template v-for="acessorio in acessorios" :key="acessorio.id">
+      <template v-for="acessorio in portao.acessorios" :key="acessorio.id">
         <section>
           <div class="campo-selecionar">
             <input
