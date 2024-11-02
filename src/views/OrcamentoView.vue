@@ -144,7 +144,8 @@ function verificacao() {
                 <button @click.prevent="verificacao" class="btn btn-lg btn-block">Confirmar orçamento</button>
             </div>
 
-            <BlocoOrcamento :infoPortao="infoPortao" v-if="mostrarOrcamento"/>
+            <BlocoOrcamento :infoPortao="infoPortao"/>
+            <!-- <BlocoOrcamento :infoPortao="infoPortao" v-if="mostrarOrcamento"/> -->
 
         </fieldset>
     </form>

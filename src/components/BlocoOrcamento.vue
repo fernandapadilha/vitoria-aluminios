@@ -8,19 +8,18 @@ const precos = ref({
     precoPadraoPortaoSocial: 100,
     tuboPreco: 0,
     precoRegua: 0,
-    acessoriosPreco: 0,
 })
 
 const precoMateriais = computed(() => precos.value.precoPadrao + 
-precos.value.tuboPreco + precos.value.precoRegua + precos.value.acessoriosPreco)
+precos.value.tuboPreco + precos.value.precoRegua)
 
 onMounted(() => {
     calculadoraOrcamento()
 })
 
 function calculadoraOrcamento() {
-    const h = props.infoPortao.altura
-    const l = props.infoPortao.comprimento
+    const h = Number(props.infoPortao.altura)
+    const l = Number(props.infoPortao.comprimento)
     const tubo = props.infoPortao.tuboSelecionado
     const cor = props.infoPortao.corSelecionada
     const acessorios = props.infoPortao.acessoriosSelecionados
@@ -37,36 +36,81 @@ function calculadoraOrcamento() {
     
     // Cálculo dos acessórios
 
-    // Portão social
+    // Cachorreira
     if (acessorios.find((acessory) => acessory.id == 1)) {
-        precos.value.acessoriosPreco += (h * cor.precoRegua) + (0.8 * cor.precoRegua) // À conferir
-        precos.value.acessoriosPreco += precos.value.precoPadraoPortaoSocial
+        precos.value.tuboPreco = 0
+        if (tubo.id == 1) precos.value.tuboPreco = (Math.ceil(5 * l * h / 3) + l) * cor.precoTuboRedondo
+        else if (tubo.id == 2) precos.value.tuboPreco = (Math.ceil(5 * l * h / 3) + l) * cor.precoTuboQuadrado
+
+        if (h <= 2.4) precos.value.precoRegua += Math.ceil(l / 6) * cor.precoRegua
     }
 
-    // Cachorreira
+    // Portão social
     if (acessorios.find((acessory) => acessory.id == 2)) {
-        if (tubo.id == 1) precos.value.acessoriosPreco += (10 * (h * l) / 9) * cor.circletuboPreco
-        else if (tubo.id == 2) precos.value.acessoriosPreco += (10 * (h * l) / 9) * cor.squaretuboPreco
-
-        if (h <= 2.4) precos.value.acessoriosPreco += l * cor.precoRegua / 6
+        precos.value.precoRegua += Math.ceil((2 * h + 1.6) / 6) * cor.precoRegua
+        precos.value.precoPadrao += precos.value.precoPadraoPortaoSocial
     }
 
     // Ponta de lança
     if (acessorios.find((acessory) => acessory.id == 3)) {
-        precos.value.acessoriosPreco += (10 * (h * l) / 1.8) * cor.spearheadPrice
+        precos.value.tuboPreco += l * 10 * cor.precoPontaDeLanca
     }
 }
 </script>
 
 <template>
     <main>
-        <h1>Oi</h1>
-        {{ precoMateriais }} <br>
-        {{ precos.tuboPreco }} <br>
-        {{ precos.precoRegua }}
+        <article>
+            <h1>Confirmação do Orçamento</h1>
+        
+            <section class="orcamento-informacoes">
+                <p>Altura: {{ props.infoPortao.altura }}</p>
+                <p>Comprimento: {{ props.infoPortao.comprimento }}</p>
+                <p>Tipo do tubo: {{ props.infoPortao.tuboSelecionado }}</p>
+                <p>Cor: {{ props.infoPortao.corSelecionada }}</p>
+                <h3>Acessorios</h3>
+                <ul v-for="acessorio in props.infoPortao.acessoriosSelecionados" :key="acessorio.id">
+                    <li>{{ acessorio.nome }}</li>
+                </ul>
+            </section>
+
+            <section class="orcamento-precos">
+                <p>Preço dos materiais: {{ precoMateriais }}</p>
+                <h2>Preço final:</h2>
+            </section>
+
+            <section class="orcamento-botoes">
+                <button class="botao-confirmacao">Confirmar Compra</button>
+                <button class="botao-cancelamento">Cancelar Compra</button>
+            </section>
+        </article>
     </main>
 </template>
 
 <style scoped>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
+    main {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+    article {
+        width: 70vw;
+        padding: 5rem;
+        border-radius: 15px;
+        box-shadow: 2px 2px 3px 3px var(--cor-sombra);
+        background-color: var(--cor-branco-secao);
+    }
 </style>
