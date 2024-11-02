@@ -6,8 +6,8 @@ import BlocoOrcamento from '@/components/BlocoOrcamento.vue'
 const portao = usarDadosPortao()
 
 const infoPortao = ref({
-    altura: 0,
-    comprimento: 0,
+    altura: '',
+    comprimento: '',
     tuboSelecionado: {},
     corSelecionada: {},
     acessoriosSelecionados: []
@@ -26,7 +26,6 @@ function formatarPreco(preco) {
 }
 
 const fraseErro = ref('')
-const mostrarCorrecao = ref(false)
 const mostrarOrcamento = ref(false)
 function componenteOrcamento() {
     mostrarOrcamento.value = !mostrarOrcamento.value
@@ -34,35 +33,35 @@ function componenteOrcamento() {
 
 
 
-function verification() {
-    let sum = 0
+function verificacao() {
+    let soma = 0
 
-    // Height verification
-    if (gateDetails.value.height == 0 || gateDetails.value.height == '') errorSentence.value = 'Altura é um campo obrigatório'
-    else if (gateDetails.value.height < 1) errorSentence.value = 'O valor mínimo para a altura é de 1 metro'
-    else if (gateDetails.value.height > 5) errorSentence.value = 'O valor máximo para a altura é de 5 metros'
-    else sum++
+    // Verificação da altura
+    if (infoPortao.value.altura == 0 || infoPortao.value.altura == '') fraseErro.value = 'Altura é um campo obrigatório'
+    else if (infoPortao.value.altura < 1) fraseErro.value = 'O valor mínimo para a altura é de 1 metro'
+    else if (infoPortao.value.altura > 5) fraseErro.value = 'O valor máximo para a altura é de 5 metros'
+    else soma++
 
-    // Length verification
-    if (gateDetails.value.lengthh == 0 || gateDetails.value.lengthh == '') errorSentence.value = 'Comprimento é um campo obrigatório'
-    else if (gateDetails.value.lengthh < 1) errorSentence.value = 'O valor mínimo para o comprimento é de 1 metro'
-    else if (gateDetails.value.lengthh > 10) errorSentence.value = 'O valor máximo para o comprimento é de 10 metros'
-    else sum++
+    // Verificação do comprimento
+    if (infoPortao.value.comprimento == 0 || infoPortao.value.comprimento == '') fraseErro.value = 'Comprimento é um campo obrigatório'
+    else if (infoPortao.value.comprimento < 1) fraseErro.value = 'O valor mínimo para o comprimento é de 1 metro'
+    else if (infoPortao.value.comprimento > 10) fraseErro.value = 'O valor máximo para o comprimento é de 10 metros'
+    else soma++
 
-    // Tube and color verification
-    if (!gateDetails.value.tubeSelected || Object.keys(gateDetails.value.tubeSelected).length === 0) {
-        errorSentence.value = 'Tubo da grade é um campo obrigatório' 
-    } else sum++
+    // Verificação do tubo e cor
+    if (!infoPortao.value.tuboSelecionado || Object.keys(infoPortao.value.tuboSelecionado).length === 0) {
+        fraseErro.value = 'Tipo de tubo é um campo obrigatório' 
+    } else soma++
     
-    if (!gateDetails.value.colorSelected || Object.keys(gateDetails.value.colorSelected).length === 0) { 
-        errorSentence.value = 'Cor é um campo obrigatório'
-    } else sum++
+    if (!infoPortao.value.corSelecionada || Object.keys(infoPortao.value.corSelecionada).length === 0) { 
+        fraseErro.value = 'Cor é um campo obrigatório'
+    } else soma++
 
-    if (sum === 4) {
-        showCorrection.value = false
-        showBudget.value = true
+    // Verificação final
+    if (soma === 4) {
+        componenteOrcamento()
     } else {
-        showCorrection.value = true
+        alert(fraseErro.value)
     }
 
 }
@@ -91,7 +90,7 @@ function verification() {
                         
                         <div class="descricao-produto" v-if="infoPortao.tuboSelecionado.descricao">
                             <p>{{ infoPortao.tuboSelecionado.descricao }}</p>
-                            <p>Valor: {{ formatarPreco(infoPortao.tuboSelecionado.preco) }}</p>
+                            <p>Valor: {{ infoPortao.tuboSelecionado.precoAprox }}</p>
                         </div> 
                     </div>
                             
@@ -134,7 +133,7 @@ function verification() {
 
                         <div class="campo-acessorio">
                             <p>{{ acessorio.descricao }}</p>
-                            <p>Valor: {{ formatarPreco(acessorio.preco) }}</p>
+                            <p>Valor: {{ acessorio.precoAprox }}</p>
                             <img :src="imageUrlAC(acessorio.img)" :alt="acessorio.alt" />
                         </div>
                     </section>
@@ -142,7 +141,7 @@ function verification() {
             </section>
 
             <div class="formulario-botao">
-                <button @click.prevent="componenteOrcamento" class="btn btn-lg btn-block">Confirmar orçamento</button>
+                <button @click.prevent="verificacao" class="btn btn-lg btn-block">Confirmar orçamento</button>
             </div>
 
             <BlocoOrcamento :infoPortao="infoPortao" v-if="mostrarOrcamento"/>
