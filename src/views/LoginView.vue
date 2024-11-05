@@ -32,7 +32,7 @@
 }
 
 .login img {
-  width: 100%;
+  width: 80%;
 }
 
 .login-secao {
