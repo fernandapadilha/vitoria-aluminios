@@ -21,8 +21,8 @@ const imageUrlTB = computed(
   () => new URL(`../assets/img/${infoPortao.value.tuboSelecionado.img}`, import.meta.url).href
 )
 
-function formatarPreco(preco) {
-  return `R$ ${preco.toFixed(2).replace('.', ',')}`
+function formatarDado(dado) {
+  return dado.toFixed(1).replace(',', '.')
 }
 
 const fraseErro = ref('')
@@ -119,6 +119,7 @@ function verificacao() {
             </article>
 
             <section class="campo-selecao-acessorio">
+                <h5>Elementos adicionais:</h5>
                 <template v-for="acessorio in portao.acessorios" :key="acessorio.id">
                     <section>
                         <div class="campo-selecionar">
@@ -144,8 +145,7 @@ function verificacao() {
                 <button @click.prevent="verificacao" class="btn btn-lg btn-block">Confirmar orçamento</button>
             </div>
 
-            <BlocoOrcamento :infoPortao="infoPortao"/>
-            <!-- <BlocoOrcamento :infoPortao="infoPortao" v-if="mostrarOrcamento"/> -->
+            <BlocoOrcamento :infoPortao="infoPortao" @fechar="componenteOrcamento" v-if="mostrarOrcamento"/>
 
         </fieldset>
     </form>
@@ -220,7 +220,11 @@ function verificacao() {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         align-items: start;
-        gap: 1rem;
+        gap: 1rem; 
+
+        & h5 {
+            grid-column: 1/4;
+        }
     }
 
     .campo-selecao-acessorio > section {
