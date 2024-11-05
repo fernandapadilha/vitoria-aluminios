@@ -64,6 +64,10 @@ onMounted(() => {
     amostragemAcessorio()
 })
 
+function formatarDado(dado) {
+    return dado.toFixed(1).replace('.', ',')
+}
+
 function formatarPreco(preco) {
   return preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
@@ -82,8 +86,8 @@ function formatarPreco(preco) {
             
         
             <section class="orcamento-informacoes">
-                <p>Altura: {{ props.infoPortao.altura }}</p>
-                <p>Comprimento: {{ props.infoPortao.comprimento }}</p>
+                <p>Altura: {{ formatarDado(props.infoPortao.altura) }}</p>
+                <p>Comprimento: {{ formatarDado(props.infoPortao.comprimento) }}</p>
                 <p>Tipo do tubo: {{ props.infoPortao.tuboSelecionado.nome }}</p>
                 <p>Cor: {{ props.infoPortao.corSelecionada.nome }}</p>
                 <div class="div-acessorios" v-if="mostrarAcessorios">

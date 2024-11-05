@@ -22,16 +22,34 @@ const imageUrlTB = computed(
 )
 
 function formatarDado(dado) {
-  return dado.toFixed(1).replace(',', '.')
+    const valorNumerico = parseFloat(dado);
+    return isNaN(valorNumerico) ? '' : valorNumerico.toFixed(1).replace('.', ',');
 }
+
+// Computeds para altura e comprimento formatados
+const alturaFormatada = computed({
+  get() {
+    return formatarDado(infoPortao.value.altura)
+  },
+  set(value) {
+    infoPortao.value.altura = parseFloat(value.replace(',', '.')) || 0
+  }
+})
+
+const comprimentoFormatado = computed({
+  get() {
+    return formatarDado(infoPortao.value.comprimento)
+  },
+  set(value) {
+    infoPortao.value.comprimento = parseFloat(value.replace(',', '.')) || 0
+  }
+})
 
 const fraseErro = ref('')
 const mostrarOrcamento = ref(false)
 function componenteOrcamento() {
     mostrarOrcamento.value = !mostrarOrcamento.value
 }
-
-
 
 function verificacao() {
     let soma = 0
@@ -46,6 +64,7 @@ function verificacao() {
     if (infoPortao.value.comprimento == 0 || infoPortao.value.comprimento == '') fraseErro.value = 'Comprimento é um campo obrigatório'
     else if (infoPortao.value.comprimento < 1) fraseErro.value = 'O valor mínimo para o comprimento é de 1 metro'
     else if (infoPortao.value.comprimento > 10) fraseErro.value = 'O valor máximo para o comprimento é de 10 metros'
+    else if (infoPortao.value.comprimento < infoPortao.value.altura) fraseErro.value = 'A medida de comprimento deve ser maior que a altura'
     else soma++
 
     // Verificação do tubo e cor
@@ -76,8 +95,8 @@ function verificacao() {
             <h5>Informe os dados sobre o portão para que possamos calcular o preço do serviço:</h5>
 
             <div class="formulario-medidas">
-                <input class="form-control" type="text" name="altura" id="altura" placeholder="Altura" v-model="infoPortao.altura">
-                <input class="form-control" type="text" name="comprimento" id="comprimento" placeholder="Comprimento" v-model="infoPortao.comprimento">
+                <input class="form-control" type="text" name="altura" id="altura" placeholder="Altura" v-model="alturaFormatada">
+                <input class="form-control" type="text" name="comprimento" id="comprimento" placeholder="Comprimento" v-model="comprimentoFormatado">
             </div>
 
             <article class="campo-informacao">
