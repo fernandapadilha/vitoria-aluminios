@@ -1,8 +1,8 @@
 <script setup>
 import { computed, ref } from 'vue'
-defineProps({
-  cores: Array
-})
+import { usarDadosPortao } from '@/stores/orcamento'
+
+const portao = usarDadosPortao()
 
 const corSelecionada = ref({
   id: '',
@@ -23,7 +23,7 @@ const imageUrl = computed(
     <section class="campo-selecao">
       <div>
         <select class="form-select" name="cores" id="cores" v-model="corSelecionada">
-          <option v-for="cor in cores" :key="cor.id" :value="cor">{{ cor.nome }}</option>
+          <option v-for="cor in portao.cores" :key="cor.id" :value="cor">{{ cor.nome }}</option>
         </select>
         <div class="descricao-produto" v-if="corSelecionada.descricao">
           <p>{{ corSelecionada.descricao }}</p>
