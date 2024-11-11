@@ -25,7 +25,10 @@ function visualizar(id) {
       <p>{{ modelo.nome }}</p>
       <img class="modelos-produto-avaliacao" src="@/assets/img/avaliacao.png" alt="iconeavaliacao">
       <p class="modelos-produto-preco">{{ modelo.preco }}</p>
-      <button @click="visualizar(modelo.id)" class="botao">Comprar</button>
+      <div>
+        <button @click="visualizar(modelo.id)" class="botao">Comprar</button>
+      </div>
+      
 
     </section>
   </main>
@@ -84,8 +87,13 @@ function visualizar(id) {
   font-style: italic;
 }
 
+.modelos-produto div {
+  display: grid;
+  justify-content: center;
+}
+
 .botao {
-  width: 7.5rem;
+  padding: .3rem 2rem;
   background-color: var(--cor-principal);
   color: var(--cor-branco);
   border-radius: 3px;
