@@ -292,6 +292,24 @@ import 'swiper/css';
   }
 }
 
+@media (max-width: 900px) {
+  .bloco-apresentacao {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .apresentecao-imagem > img {
+    width: 100%;
+    height: 40vh;
+    border-radius: 10px;
+    box-shadow:
+      0 0 8px 1px var(--cor-sombra),
+      4px 4px 8px 1px var(--cor-sombra);
+  }
+}
+
 /*@media (max-width: 700px) {
     .bloco-objetivos {
       grid-template-columns: 1fr;
