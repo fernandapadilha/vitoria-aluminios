@@ -86,6 +86,10 @@ function verificacao() {
 
 }
 
+function recarregarPagina() {
+    window.location.reload()
+}
+
 </script>
 
 <template>
@@ -189,7 +193,7 @@ function verificacao() {
                 <button @click.prevent="verificacao" class="btn btn-lg btn-block">Confirmar orçamento</button>
             </div>
 
-            <BlocoOrcamento :infoPortao="infoPortao" @fechar="componenteOrcamento" v-if="mostrarOrcamento"/>
+            <BlocoOrcamento :infoPortao="infoPortao" @recarregar="recarregarPagina" @fechar="componenteOrcamento" v-if="mostrarOrcamento"/>
 
         </fieldset>
     </form>
@@ -329,11 +333,19 @@ function verificacao() {
 
     & button {
         padding: .8rem 0;
+        border-radius: 10px;
         background-color: var(--cor-principal);
         color: var(--cor-branco);
         box-shadow:
             0 0 8px 1px var(--cor-sombra),
             4px 4px 8px 1px var(--cor-sombra);
+    }
+
+    & button:hover {
+        border: 2px solid var(--cor-principal);
+        background-color: var(--cor-branco-secao);
+        color: var(--cor-principal);
+        transition: .1s;
     }
 }
 

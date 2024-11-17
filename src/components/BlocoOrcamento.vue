@@ -65,7 +65,7 @@ onMounted(() => {
 })
 
 function formatarDado(dado) {
-    return dado.toFixed(1).replace('.', ',')
+    return `${dado.toFixed(1).replace('.', ',')} m`
 }
 
 function formatarPreco(preco) {
@@ -105,8 +105,8 @@ function formatarPreco(preco) {
             </section>
 
             <section class="orcamento-botoes">
-                <button class="botao-confirmacao">Confirmar Compra</button>
-                <button class="botao-cancelamento">Cancelar Compra</button>
+                <button @click.prevent="$emit('recarregar')" class="botao-confirmacao">Confirmar Compra</button>
+                <button @click.prevent="$emit('recarregar')" class="botao-cancelamento">Cancelar Compra</button>
             </section>
         </article>
     </main>
