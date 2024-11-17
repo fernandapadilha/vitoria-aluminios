@@ -51,7 +51,7 @@ export const usarDadosPortao = defineStore('portao', () => {
             id: 1, 
             nome: 'Cachorreira', 
             precoAprox: '~R$ 650,00', 
-            descricao: 'Dispositivo localizado na parte inferior do portão que impede a passagem de animais pelos vãos entre os tubos do portão', 
+            descricao: 'Dispositivo localizado na parte inferior do portão que impede a passagem de animais', 
             img: 'cachorreira.png',
             alt: 'Portão com cachorreira'
         },
