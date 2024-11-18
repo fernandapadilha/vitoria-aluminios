@@ -1,26 +1,31 @@
 <script setup>
-import { Swiper, SwiperSlide } from 'swiper/vue';
 
+import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 
 </script>
 
 <template>
+
   <section class="secao-apresentacao">
     <section class="bloco-apresentacao">
-      <div class="apresentecao-imagem">
+
+      <picture class="apresentecao-imagem">
+        <source srcset="../assets/img/portaoquatro.jpg" media="(max-width: 900px)"/>
         <img src="../assets/img/Portao1.png" alt="Portão principal" />
-      </div>
+      </picture>
 
       <div class="apresentacao-texto">
         <h1>A principal no setor em Barra do Sul e região</h1>
         <p>Encontre uma variedade de portões e faça o seu orçamento</p>
       </div>
+
     </section>
   </section>
 
   <section class="secao-objetivos">
     <section class="bloco-objetivos">
+
       <div class="item-objetivos">
         <img src="../assets/img/visao-empresa.jpg" alt="Visão da empresa" />
         <h3>VISÃO</h3>
@@ -49,11 +54,13 @@ import 'swiper/css';
           <li>Família.</li>
         </ul>
       </div>
+
     </section>
   </section>
 
   <section class="secao-quem-somos">
     <section class="bloco-quem-somos">
+
       <swiper class="my-swiper" loop> 
         <swiper-slide>
           <img src="../assets/img/portao-carrossel1.png" alt="Portão top" />
@@ -66,7 +73,7 @@ import 'swiper/css';
         </swiper-slide>
       </swiper>
 
-      <div>
+      <article class="descricao-quem-somos">
         <h2>QUEM SOMOS NÓS</h2>
         <p>
           Desde 2011 somos uma empresa independente de confecção de portões, voltada para serviços
@@ -78,31 +85,38 @@ import 'swiper/css';
           Esta empresa foi fundada por Benício Padilha, em união com sua família, que é de grande
           importância para o sucesso laboral.
         </p>
-      </div>
+      </article>
+
     </section>
   </section>
 
-
   <section class="secao-avaliacao">
     <section>
-      <h1>Quem nos contrata recomenda</h1>
+
+      <h2>Quem nos contrata recomenda</h2>
+
       <section class="bloco-avaliacao">
+
         <div>
           <img src="../assets/img/aspas.svg" alt="Aspas">
           <p>Fui muito bem atendida, o profissional foi muito educado e fez um trabalho de qualidade. Valeu a pena, orçamento grátis e não é careiro.</p>
           <p><span>Ana Paula, de Joinville</span></p>
         </div>
+
         <div>
           <img src="../assets/img/aspas.svg" alt="Aspas">
           <p>Excelente serviço! O portão que encomendei ficou impecável, com acabamento de alta qualidade e muita atenção aos detalhes.</p>
           <p><span>José Luís, de Balneário Barra do Sul</span></p>
         </div>
+
         <div>
           <img src="../assets/img/aspas.svg" alt="Aspas">
           <p>A equipe foi extremamente profissional, desde o atendimento até a instalação. Recomendo para quem busca um trabalho eficiente e bem-feito.</p>
           <p><span>Renilda Miranda, de Joinville</span></p>
         </div>
+
       </section>
+      
     </section>
   </section>
 
@@ -143,7 +157,6 @@ import 'swiper/css';
   object-fit: cover;
 }
 
-
 .secao-apresentacao {
   display: grid;
   justify-items: center;
@@ -158,6 +171,11 @@ import 'swiper/css';
     4px 4px 8px 1px var(--cor-sombra);
   border-radius: 15px;
   width: 90%;
+}
+
+.apresentecao-imagem {
+  display: grid;
+  align-items: center;
 }
 
 .apresentecao-imagem > img {
@@ -250,7 +268,7 @@ import 'swiper/css';
       4px 4px 8px 1px var(--cor-sombra);
   }
 
-  & div {
+  & div, article {
     padding: 1rem;
 
     & p {
@@ -258,7 +276,6 @@ import 'swiper/css';
     }
   }
 }
-
 
 .secao-avaliacao {
   display: grid;
@@ -269,7 +286,7 @@ import 'swiper/css';
 .secao-avaliacao > section {
   width: 90%;
 
-  & h1 {
+  & h2 {
     text-align: center;
     padding: 1rem 0;
   }
@@ -292,25 +309,80 @@ import 'swiper/css';
   }
 }
 
-/*@media (max-width: 700px) {
-    .bloco-objetivos {
-      grid-template-columns: 1fr;
+@media only screen and (max-width: 1000px) and (min-width: 800px)  {
+  .bloco-quem-somos {
+    width: 90%;
+  }
+}
+
+@media (max-width: 900px) {
+  .bloco-apresentacao {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .apresentecao-imagem > img {
+    max-width: 100%;
+    max-height: 70%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow:
+      0 0 8px 1px var(--cor-sombra),
+      4px 4px 8px 1px var(--cor-sombra);
+  }
+
+  .bloco-objetivos {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 500px)  {
+  .bloco-objetivos div {
+    width: 70%;
+  }
+}
+
+@media (max-width: 800px) {
+  .bloco-quem-somos {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .bloco-avaliacao {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 500px) {
+  .bloco-avaliacao div {
+    width: 80%;
+  }
+}
+
+@media(max-width: 550px) {
+  .apresentacao-texto {
+    padding: 0;
+
+    & h1 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    & p {
+      font-size: 1rem;
     }
   }
-  
-  @media (max-width: 960px) {
-    .carrossel {
-      grid-template-columns: 1fr;
-      margin-top: 0;
-    }
 
-    .carrossel-imagem img {
-      width: 100vw;
+  .descricao-quem-somos {
+    & p {
+      font-size: .8rem;
     }
-
-    .quem-somos-nos{
-      padding: 0 1rem;
-    }
-  } */
+  }
+}
  
 </style>
