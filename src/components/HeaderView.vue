@@ -65,7 +65,7 @@
 }
 
   .principal-menu {
-    background-color: #D4D9D2;
+    background-color: var(--cor-cinza-complementar);
   }
 
 .principal-menu-lista {
