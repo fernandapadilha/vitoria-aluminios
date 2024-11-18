@@ -65,7 +65,7 @@ onMounted(() => {
 })
 
 function formatarDado(dado) {
-    return dado.toFixed(1).replace('.', ',')
+    return `${dado.toFixed(1).replace('.', ',')} m`
 }
 
 function formatarPreco(preco) {
@@ -105,8 +105,8 @@ function formatarPreco(preco) {
             </section>
 
             <section class="orcamento-botoes">
-                <button class="botao-confirmacao">Confirmar Compra</button>
-                <button class="botao-cancelamento">Cancelar Compra</button>
+                <button @click.prevent="$emit('recarregar')" class="botao-confirmacao">Confirmar Compra</button>
+                <button @click.prevent="$emit('recarregar')" class="botao-cancelamento">Cancelar Compra</button>
             </section>
         </article>
     </main>
@@ -195,6 +195,33 @@ function formatarPreco(preco) {
         border: none;
         border-radius: 10px;
         color: var(--cor-branco-secao);
+    }
+
+    @media (max-width: 480px) {
+        article {
+            width: 90vw;
+            padding: 1rem;
+        }
+
+        .secao-cabecalho h1 {
+            font-size: 1.5rem;
+        }
+
+        .orcamento-informacoes p{
+            padding: .1rem;
+        }
+
+        .orcamento-precos h2 {
+            font-size: 1.3rem;
+        }
+
+        .orcamento-botoes {
+            grid-template-columns: 1fr;
+
+            & button {
+                padding: .5rem;
+            }
+        }
     }
 
 </style>

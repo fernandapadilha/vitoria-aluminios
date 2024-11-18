@@ -3,7 +3,7 @@
 <template>
   <header>
     <main class="principal">
-      <div><h1 class="principal-titulo">Vitória Alumínios</h1></div>
+      <div><h1 class="principal-titulo"><router-link>Vitória Alumínios</router-link></h1></div>
 
       <div class="principal-login">
         <router-link to="/login" exact>
@@ -47,7 +47,8 @@
     color: var(--cor-branco);
   }
 
-.principal-titulo {
+.principal-titulo a {
+  text-decoration: none;
   color: var(--cor-branco);
 }
 
@@ -64,7 +65,7 @@
 }
 
   .principal-menu {
-    background-color: #D4D9D2;
+    background-color: var(--cor-cinza-complementar);
   }
 
 .principal-menu-lista {

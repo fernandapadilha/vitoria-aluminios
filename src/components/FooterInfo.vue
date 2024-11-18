@@ -4,7 +4,7 @@
   <footer class="rodape">
 
     <section class="rodape-descricao">
-      <h1>VITÓRIA ALUMÍNIOS</h1>
+      <h1><router-link to="/">VITÓRIA ALUMÍNIOS</router-link></h1>
       <p>
         A Vitória Alumínios é uma empresa especializada na confecção de portões de alumínio
         personalizados.
@@ -15,25 +15,25 @@
       <div>
         <h6>Institucional</h6>
         <ul>
-          <li>Sobre nós</li>
-          <li>Relações com investidores</li>
-          <li>Trabalhe conosco</li>
-          <li>Para empresas</li>
-          <li>Política de privacidade</li>
-          <li>Termos de uso</li>
-          <li>Compromisso de integridade</li>
+          <li><router-link>Sobre nós</router-link></li>
+          <li><router-link>Relações com investidores</router-link></li>
+          <li><router-link>Trabalhe conosco</router-link></li>
+          <li><router-link>Para empresas</router-link></li>
+          <li><router-link>Política de privacidade</router-link></li>
+          <li><router-link>Termos de uso</router-link></li>
+          <li><router-link>Compromisso de integridade</router-link></li>
         </ul>
       </div>
 
       <div>
         <h6>Fale conosco</h6>
         <ul>
-          <li>Email</li>
-          <li>Telefone</li>
-          <li>Perguntas frequentes</li>
-          <li>Para empresas</li>
-          <li>Depoimentos</li>
-          <li>Endereço</li>
+          <li><router-link>Email</router-link></li>
+          <li><router-link>Telefone</router-link></li>
+          <li><router-link>Perguntas frequentes</router-link></li>
+          <li><router-link>Para empresas</router-link></li>
+          <li><router-link>Depoimentos</router-link></li>
+          <li><router-link>Endereço</router-link></li>
         </ul>
       </div>
         
@@ -67,8 +67,8 @@
 
   </footer>
   <section class="rodape-info">
-      <p>©2011 - 2024, Vitória Alumínios. CNPJ 14.127.813/0001-51 -  Rua Padre Nestor Welter, 408 - Balneário Barra do Sul/SC - Brasil</p>
-    </section>
+    <p>©2011 - 2024, Vitória Alumínios. CNPJ 14.127.813/0001-51 -  Rua Padre Nestor Welter, 408 - Balneário Barra do Sul/SC - Brasil</p>
+  </section>
 </template>
 
 <style scoped>
@@ -93,6 +93,11 @@
   padding: 1rem 0;
 }
 
+.rodape-descricao h1 a {
+  text-decoration: none;
+  color: var(--cor-branco);
+}
+
 .rodape-links-internos {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -110,11 +115,15 @@
 }
 
 .rodape-links-internos div ul li {
-  font-weight: 300;
-}
+  & a {
+    font-weight: 300;
+    text-decoration: none;
+    color: var(--cor-branco);
+  }
 
-.rodape-links-internos div ul li:hover {
-  text-decoration: underline;
+  & a:hover {
+    text-decoration: underline;
+  }
 }
 
 .rodape-icones {
@@ -149,12 +158,38 @@
 .rodape-info {
   padding: 1rem;
   background-color: var(--cor-branco-secao);
-  justify-items: center;
+
+  & p {
+    text-align: center;
+  }
 }
 
 @media (max-width: 630px) {
   .rodape {
     grid-template-columns: 1fr;
+  }
+
+  .rodape-descricao {
+    grid-column: 1;
+  }
+
+  .rodape-icones {
+    display: grid;
+    grid-row: 2/3;
+    justify-content: center;
+    justify-items: center;
+    padding: 1rem 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .rodape-links-internos {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+
+  .rodape-info p {
+    font-size: .8rem;
   }
 }
 

@@ -1,4 +1,5 @@
 <script setup>
+
 import { ref, computed } from 'vue'
 import { usarDadosPortao } from '@/stores/orcamento'
 import BlocoOrcamento from '@/components/BlocoOrcamento.vue'
@@ -85,11 +86,17 @@ function verificacao() {
 
 }
 
+function recarregarPagina() {
+    window.location.reload()
+}
+
 </script>
 
 <template>
+
     <form class="formulario">
         <fieldset>
+
             <h1>Orçamento</h1>
 
             <h5>Informe os dados sobre o portão para que possamos calcular o preço do serviço:</h5>
@@ -100,10 +107,14 @@ function verificacao() {
             </div>
 
             <article class="campo-informacao">
+
                 <h5>Tipo do tubo:</h5>
+
                 <section class="campo-selecao">
-                    <div>
-                        <select name="tubos" id="tubos" v-model="infoPortao.tuboSelecionado">
+
+                    <div class="campo-dados">
+
+                        <select class="form-select" name="tubos" id="tubos" v-model="infoPortao.tuboSelecionado">
                             <option v-for="tubo in portao.tubos" :key="tubo.id" :value="tubo">{{ tubo.nome }}</option>
                         </select>
                         
@@ -111,60 +122,78 @@ function verificacao() {
                             <p>{{ infoPortao.tuboSelecionado.descricao }}</p>
                             <p>Valor: {{ infoPortao.tuboSelecionado.precoAprox }}</p>
                         </div> 
+
                     </div>
                             
-                    <div v-if="infoPortao.tuboSelecionado.img">
+                    <div class="campo-ilustracao" v-if="infoPortao.tuboSelecionado.img">
                         <img :src="imageUrlTB" :alt="infoPortao.tuboSelecionado.alt">
                     </div>
+
                 </section>
+
             </article>
 
             <article class="campo-informacao">
+
                 <h5>Cor:</h5>
+
                 <section class="campo-selecao">
-                    <div>
+
+                    <div class="campo-dados">
+
                         <select class="form-select" name="cores" id="cores" v-model="infoPortao.corSelecionada">
                             <option v-for="cor in portao.cores" :key="cor.id" :value="cor">{{ cor.nome }}</option>
                         </select>
+
                         <div class="descricao-produto" v-if="infoPortao.corSelecionada.descricao">
                             <p>{{ infoPortao.corSelecionada.descricao }}</p>
                         </div>
+
                     </div>
 
-                    <div v-if="infoPortao.corSelecionada.img">
+                    <div class="campo-ilustracao" v-if="infoPortao.corSelecionada.img">
                         <img :src="imageUrlCR" :alt="infoPortao.corSelecionada.alt" />
                     </div>
+
                 </section>
+
             </article>
 
-            <section class="campo-selecao-acessorio">
-                <h5>Elementos adicionais:</h5>
-                <template v-for="acessorio in portao.acessorios" :key="acessorio.id">
-                    <section>
-                        <div class="campo-selecionar">
-                            <input
-                            class="form-check-input"
-                            type="checkbox"
-                            :value="acessorio"
-                            v-model="infoPortao.acessoriosSelecionados"
-                            />
-                            <p>{{ acessorio.nome }}</p>
-                        </div>
+            <section class="bloco-selecao-acessorio">
 
-                        <div class="campo-acessorio">
-                            <p>{{ acessorio.descricao }}</p>
-                            <p>Valor: {{ acessorio.precoAprox }}</p>
-                            <img :src="imageUrlAC(acessorio.img)" :alt="acessorio.alt" />
-                        </div>
-                    </section>
-                </template>
+                <h5>Elementos adicionais:</h5>
+
+                <section>
+                    <template v-for="acessorio in portao.acessorios" :key="acessorio.id">
+                        <section>
+
+                            <div class="campo-selecionar-acessorio">
+                                <input
+                                class="form-check-input"
+                                type="checkbox"
+                                :value="acessorio"
+                                v-model="infoPortao.acessoriosSelecionados"
+                                />
+                                <p>{{ acessorio.nome }}</p>
+                            </div>
+
+                            <div class="campo-acessorio">
+                                <p>{{ acessorio.descricao }}</p>
+                                <p>Valor: {{ acessorio.precoAprox }}</p>
+                                <img :src="imageUrlAC(acessorio.img)" :alt="acessorio.alt" />
+                            </div>
+
+                        </section>
+                    </template>
+                </section>
+
             </section>
 
             <div class="formulario-botao">
                 <button @click.prevent="verificacao" class="btn btn-lg btn-block">Confirmar orçamento</button>
             </div>
 
-            <BlocoOrcamento :infoPortao="infoPortao" @fechar="componenteOrcamento" v-if="mostrarOrcamento"/>
+            <BlocoOrcamento :infoPortao="infoPortao" @recarregar="recarregarPagina" @fechar="componenteOrcamento" v-if="mostrarOrcamento"/>
 
         </fieldset>
     </form>
@@ -173,140 +202,183 @@ function verificacao() {
 
 <style scoped>
 
-    .formulario {
-        display: grid;
-        justify-content: center;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.formulario {
+    display: grid;
+    justify-content: center;
+}
+
+.formulario fieldset {
+    width: 90vw;
+    padding: 3rem 0;
+
+    & h5 {
+        font-size: 1rem;
+        font-weight: 400;
     }
+}
 
-    .formulario fieldset {
-        width: 90vw;
-        padding: 3rem 0;
+.formulario-medidas {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 1rem;
+}    
+
+.formulario-medidas input {
+    margin-top: 3rem;
+    padding: .6rem 1rem;
+}
+
+.campo-informacao {
+    margin: 3rem 0;
+
+    & h5 {
+        padding: .5rem 0;
     }
+}
 
-    .formulario-medidas {
-        display: grid;
-        grid-template-columns: auto auto;
-        column-gap: 1rem;
-    }    
+.campo-selecao {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    border-radius: 10px;
+    box-shadow:
+      0 0 8px 1px var(--cor-sombra),
+      4px 4px 8px 1px var(--cor-sombra);
+}
 
-    .formulario-medidas input {
-        margin-top: 3rem;
-        padding: .6rem 1rem;
-    }
+.campo-dados {
+    background-color: var(--cor-cinza-complementar);
+    color: var(--cor-preto);
+    border-radius: 10px 0 0 10px;
 
-    .formulario-botao {
-        display: grid;
-        margin-top: 3rem;
-    }
-
-    .formulario-botao button {
-        background-color: var(--cor-principal);
-        color: var(--cor-branco);
-        box-shadow: 2px 2px 3px 3px var(--cor-sombra);
-    }
-
-    .campo-informacao {
-        margin: 3rem 0;
-    }
-
-    .campo-selecao {
-        display: grid;
-        grid-template-columns: 2.5fr 1fr;
-        column-gap: 1rem;
-        height: 10rem;
-        color: var(--cor-preto);
-    }
-
-    .campo-selecao > div {
-        background-color: var(--cor-branco);
-        border: 1px solid var(--cor-branco);
-        box-shadow: 2px 2px 3px 3px var(--cor-sombra);
-        max-height: 10rem;
-    }
-
-    .campo-selecao div select {
+    & select {
         width: 100%;
         padding: .6rem 1rem;
-        background-color: var(--cor-branco);
+        color: var(--cor-preto);
+        background-color: var(--cor-cinza-complementar);
         border: none;
     }
+}
 
-    .campo-selecao > div, .campo-selecao div select, .campo-selecao div img {
-        border-radius: 10px;
+.descricao-produto {
+    padding: 1rem;
+}
+
+.campo-ilustracao {
+    max-height: 10rem;
+
+    & img {
+        border-radius: 0 10px 10px 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
+}
 
-    .campo-selecao-acessorio {
+.bloco-selecao-acessorio h5 {
+    padding: .5rem 0;
+}
+
+.bloco-selecao-acessorio > section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1rem;
+
+    & section {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        align-items: start;
-        gap: 1rem; 
-
-        & h5 {
-            grid-column: 1/4;
-        }
-    }
-
-    .campo-selecao-acessorio > section {
-        display: grid;
+        row-gap: 1rem;
+        padding: 2rem;
         align-items: center;
-        background-color: var(--cor-branco);
+        background-color: var(--cor-cinza-complementar);
         color: var(--cor-preto);
-        border: 1px solid var(--cor-branco);
-        box-shadow: 2px 2px 3px 3px var(--cor-sombra);
+        border-radius: 10px;
+        box-shadow:
+            0 0 8px 1px var(--cor-sombra),
+            4px 4px 8px 1px var(--cor-sombra);
         min-height: 20rem;
     }
+}
 
-    .campo-selecao-acessorio > section, .campo-acessorio img {
-        border-radius: 10px;
-    }
+.campo-selecionar-acessorio {
+    display: grid;
+    justify-content: center;
 
-    .campo-selecao-acessorio > section > div {
-        padding: 1rem 2rem;
-    }
-
-    .campo-selecionar {
-        display: grid;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .campo-selecionar input {
+    & input {
         position: absolute;
         width: 20px;
         height: 20px;
     }
+}
 
-    .descricao-produto {
-      padding: 1rem;
-    }
-
-    .campo-selecao > div > img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .campo-acessorio p {
+.campo-acessorio {
+    & p {
         padding: 0.5rem 0;
     }
 
-    .campo-acessorio img {
+    & img {
         width: 100%;
         height: 50%;
+        border-radius: 10px;
         object-fit: cover;
     }
+}
 
-    @media (max-width: 500px) {
-      .campo-selecao {
+.formulario-botao {
+    display: grid;
+    margin-top: 3rem;
+
+    & button {
+        padding: .8rem 0;
+        border-radius: 10px;
+        background-color: var(--cor-principal);
+        color: var(--cor-branco);
+        box-shadow:
+            0 0 8px 1px var(--cor-sombra),
+            4px 4px 8px 1px var(--cor-sombra);
+    }
+
+    & button:hover {
+        border: 2px solid var(--cor-principal);
+        background-color: var(--cor-branco-secao);
+        color: var(--cor-principal);
+        transition: .1s;
+    }
+}
+
+@media (max-width: 940px) {
+    .bloco-selecao-acessorio > section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media(max-width: 630px) {
+    .formulario-medidas {
+        grid-template-columns: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .campo-selecao {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
-      }
     }
 
-    @media(max-width: 630px) {
-        .formulario-medidas {
-            grid-template-columns: auto;
+    .campo-dados {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .campo-ilustracao {
+        border-radius: 0 0 10px 10px;
+
+        & img {
+            border-radius: 0 0 10px 10px;
         }
     }
+}
 
 </style>
